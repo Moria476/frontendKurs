@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        {
+          name: "Adam",
+          age: 16,
+          city: "Kraków",
+          job: "Carpenter",
+        },
+        {
+          name: "Piotr",
+          age: 33,
+          city: "Warszawa",
+          job: "Engineer",
+        },
+        {
+          name: "Julia",
+          age: 20,
+          city: "Łódź",
+          job: "Medic",
+        },
+        {
+          name: "Henryk",
+          age: 33,
+          city: "Łódź",
+          job: "Shop Assistant",
+        },
+        {
+          name: "Kamila",
+          age: 25,
+          city: "Łódź",
+          job: "Barber",
+        },
+      ];
+
+      function displayCity(value, index, array) {
+        console.log(value.city);
+      }
+      const userCity = users.forEach(displayCity);
+
+      function displayAge(value, index, array) {
+        if (value.age % 5 === 0) {
+          console.log(`${value.age} + obchodzi właśnie 5-lecie`);
+        } else {
+          console.log(value.age);
+        }
+      }
+      const userAge = users.forEach(displayAge);
+
+      const servers = [
+        { ip: "192.268.0.1", name: "Server 1", app: "Random App 12" },
+        { ip: "192.55.32.3", name: "Server 2", app: "Random App 84" },
+        { ip: "192.3.3.3", name: "Server 3", app: "Random App 44" },
+        { ip: "192.55.65.2", name: "Server 4", app: "Random App 54" },
+      ];
+
+      const serversMap = servers.map((server) => {
+        return server.ip;
+      });
+      console.log(serversMap);
+      ///1. Wyswietl wszystkie miasta, które znajduja sie w tablicy
+      ///2. Wyświetl wiek kazdej oraz czy obchodzi właśnie X-lecie ( moze byc 5 lub 10 lat )
+
+      //okolo 12:50 dac sobie roznice miedzy for ech a map
+
+      //## `filter`
+
+      //- odfiltrowuje jeśli funkcja wyzszego rzędu zwróci `false`
+
+      const cities = [
+        { name: "New York", population: 14, country: "US" },
+        { name: "Gdansk", population: 5, country: "PL" },
+        { name: "Berlin", population: 12, country: "DE" },
+        { name: "Moscow", population: 22, country: "RU" },
+        { name: "Rome", population: 15, country: "IT" },
+      ];
+
+      const filteredCities = cities.filter((city) => {
+        console.log(city.name);
+        return "k" === city.name.slice(-1);
+      });
+      console.log(filteredCities);
+
+      const arr = ["a", "b", "c"];
+      for (const parametr of arr) {
+        console.log(parametr);
+      }
+
+      for (const cityUsers of users) {
+        console.log(cityUsers.city);
+      }
+    </script>
+  </body>
+</html>

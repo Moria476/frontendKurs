@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+      //   #### Zadanie 2 - podstawowe operacje na tablicach
+      //Stwórz tablicę z listą swoich ulubionych potraw. Następnie:
+
+      //- Wypisz pierwszą potrawę w konsoli.
+      ///- Wypisz ostatnią potrawę w konsoli (skorzystaj z atrybutu length).
+      //- Dodaj potrawę na końcu tablicy.
+      //- Usuń pierwszą potrawę z tablicy.
+      //- Zmodyfikuj potrawę pod indeksem 1.
+      //- Dodaj potrawę na początku tablicy.
+
+      const favoriteDishes = ["leczo", "golobki", "pizza"];
+       console.log(favoriteDishes[0]);
+       console.log(favoriteDishes[favoriteDishes.length - 1]);
+
+       favoriteDishes.push("spagetti");
+       console.log(favoriteDishes);
+      console.log(favoriteDishes.shift());
+       console.log(favoriteDishes);
+        favoriteDishes[1] = "cheese";
+       console.log(favoriteDishes);
+       favoriteDishes.unshift("hamburger");
+       console.log(favoriteDishes);
+
+
+    </script>
+</body>
+</html>

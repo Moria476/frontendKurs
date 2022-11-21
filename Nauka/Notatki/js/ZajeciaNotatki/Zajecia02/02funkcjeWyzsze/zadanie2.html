@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function iterate(fn, fn1) {
+        if (typeof fn === "function") {
+          fn();
+        }
+        for (let i = 0; i < 10; i++) {
+          console.log(`Cześć ${i}`);
+          console.log("a");
+          if (typeof fn1 === "function") {
+            fn1();
+          }
+        }
+      }
+      //iterate();
+      // iterate();
+      // iterate();
+
+      const dodatkowaLogika = function () {
+        console.log("cos inaczej");
+      };
+      const preFunction = function () {
+        console.log("przed wszystkim");
+      };
+      iterate(preFunction, dodatkowaLogika);
+      iterate(dodatkowaLogika);
+      //iterate(3);
+    </script>
+  </body>
+</html>

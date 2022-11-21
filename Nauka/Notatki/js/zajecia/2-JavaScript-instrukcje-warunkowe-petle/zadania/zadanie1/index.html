@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 1</title>
+  </head>
+  <body>
+    <script>
+      const jestSobota = false;
+      const jestNiedziela = false;
+
+      // Zadanie 1
+      // Napisz instrukcję warunkową, która wypisuje w konsoli `:)` dla prawdy i `:(` dla fałszu dla zmiennych `jestSobota` i `jestNiedziela`.
+
+      if (jestSobota || jestNiedziela) console.log("😊");
+      else console.log("😒");
+
+      const mood = jestSobota || jestNiedziela ? "😊" : "😒";
+      console.log(mood);
+      let z = 0;
+      let y = z ?? 2;
+      console.log(y, z);
+    </script>
+  </body>
+</html>

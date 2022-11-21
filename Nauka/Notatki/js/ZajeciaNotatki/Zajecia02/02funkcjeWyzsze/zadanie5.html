@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function entry(fn) {
+        let a = 0;
+
+        return function () {
+          console.log(a);
+
+          if (a === 0) {
+            a++;
+            fn();
+          } else {
+            console.log("blokada");
+          }
+        };
+      }
+
+      function access() {
+        console.log("enter");
+      }
+      const limitedFunction = entry(access);
+      const limitedFunction2 = entry(access);
+      limitedFunction();
+      limitedFunction();
+      limitedFunction();
+      limitedFunction();
+      limitedFunction2();
+      limitedFunction2();
+    </script>
+  </body>
+</html>

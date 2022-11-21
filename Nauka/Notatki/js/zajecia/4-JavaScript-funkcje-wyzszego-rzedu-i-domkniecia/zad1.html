@@ -1,0 +1,51 @@
+<html>
+  <script>
+    function iterate(beforeFn, additionalFn) {
+
+      // domyslnie udefined
+      if(typeof beforeFn === "function"){
+        beforeFn()
+      }
+
+      for (let i = 0; i < 10; i++) {
+        console.log(`Cześć ${i}`);
+        // inna logika
+        console.log("a");
+
+        // wykona dodakowa logika
+        if (typeof additionalFn === "function") {
+          additionalFn();
+        }
+      }
+    }
+
+    iterate();
+    iterate();
+
+    //
+    const dodatkowaLogika = function () {
+      console.log("Coś inaczej");
+    };
+
+    const preFunction = function () {
+      console.log("Przed wszystkim!")
+    }
+
+    iterate(preFunction, dodatkowaLogika);
+
+    iterate(preFunction)
+
+    iterate(dodatkowaLogika)
+
+    iterate(dodatkowaLogika)
+    
+    // iterate(, dodatkowaLogika)
+    //Przed wszystkim! 
+    // Czesc 1... 
+    // Czesc 2...
+    // dodatkowalogike 
+
+    //iterate(3)
+
+  </script>
+</html>

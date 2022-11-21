@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      
+      
+
+      const fruits = ["orange"];
+      console.log(fruits[0]); //orange
+      fruits.push("apple");  // wstawia na koniec
+      console.log(fruits[1]);//apple
+      fruits.unshift("grapes"); // wstawia przed
+      console.log(fruits[0]); //grapes
+      console.log(fruits); // ['grapes', 'orange', 'apple']
+
+      const [k, j, ...rest] = fruits; // przypisuje [k = grapes, j = orange, ...rest = pozostałe elementy]
+      console.log([k, j, ...rest]);//['grapes', 'orange', 'apple']
+      const array = [k, j, "strawberry", ...rest]; 
+      console.log(array); //['grapes', 'orange', 'strawberry', 'apple']
+      const w = [...array.slice(0, 2), "strawberry", ...array.slice(2)];
+      console.log(w);//['grapes', 'orange', 'strawberry', 'strawberry', 'apple']
+
+
+
+    </script>
+  </body>
+</html>

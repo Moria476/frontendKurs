@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+              const { age, ...newPerson } = person; // destrukcja . usuniecie age i utworzenie nowego obiektu z ta sama referencja do person
+      console.log(newPerson);
+      const { lastName } = user; // usuniecie lastName z usera
+      console.log(user);
+
+      /// z filmu o destructing in 100 sec
+      const [one1, two1] = [1, 2, 3];
+      // to to samo co
+      const arr = [1, 2, 3];
+      const one2 = arr[0];
+      const two2 = arr[1];
+
+      const arr1 = ["bacon", "pizza", "fries"];
+      const [bacon, pizza, fries] = arr1;
+      const [bacon1, ...rest1] = arr1;
+      console.log(pizza);
+      console.log(rest1);
+
+      const arr3 = [undefined, "pizza", "fries"];
+      const [bacon2 = "bacon", pizza2, fires2] = arr3;
+      console.log(bacon2);
+
+      const objekt = {
+        shroom: undefined,
+        banana: "banana",
+        pepper: "pepper",
+      };
+      const { shroom = "dasdasd" } = objekt;
+      console.log(shroom);
+
+      const { shroom: mushroom } = objekt;
+      console.log(mushroom);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+  <script>
+    function exampleFunction() {
+      console.log("Example");
+    }
+    function dummyFunction() {
+      console.log("Dummy Example");
+    }
+
+    function test(fn, times) {
+      function innerFunction() {
+        for (let i = 0; i < times; i++) {
+          fn();
+        }
+      }
+      return innerFunction;
+      // jezeli funkcja niz nie zwraca to
+      // domylnie return undefined
+    }
+
+    const a = test(exampleFunction, 6);
+    const b = test(dummyFunction, 6);
+    /// test times = 6 wykonala mi się funkcja która jest podana w parametrze
+
+    console.log(a, b); //wyswietli zapis funckji
+
+    a();
+    a();
+    a();
+    b();
+  </script>
+</html>

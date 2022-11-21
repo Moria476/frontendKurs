@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const createStorage = function () {
+        let value = 0;
+        let prive = 0;
+        return {
+          setValue(newValue) {
+            value = newValue;
+            price = value * 200;
+          },
+          //  setValue: function (newValue) {
+          //     value = newValue;
+          //    },
+          getValue() {
+            return value;
+          },
+          getPrice() {
+            return price;
+          },
+        };
+      };
+      const storage = createStorage();
+      console.log(storage.getValue());
+      storage.setValue(5);
+      console.log(storage.getValue());
+      storage.value = 10;
+      console.log(storage.getValue());
+      console.log(storage.value);
+      console.log(storage.getPrice());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //     ### Zadanie 7.
+
+      //1. Wyświetl tylko elementy większe lub równe od 20:
+      //  `Elementy większe lub równe od 20: 50,20,21,100,20,44`
+      //2. Policz sumę wszytskich elementów tablicy
+      ////   `Suma elementów w tablicy: 215`
+
+      //4. Wyświetl sumę elementów na indeksach parzystych:
+      //  `Suma elementów parzystych: 193`
+
+      const numbers = [
+        11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20, 14, 8, 19, 44,
+        -21, -53, 17, -21,
+      ];
+
+      //1
+
+      const moreThan20 = numbers.filter((number) => number >= 20);
+
+      console.log(moreThan20);
+
+      //2
+
+      const sumArray = numbers.reduce((prev, current) => {
+        return prev + current;
+      }, 0);
+      console.log(sumArray);
+
+      //3. Wyświetl sumę elementów tylko ujemnych:
+      //  `Suma elementów ujemnych: -134`
+
+      const onlyNegative = numbers.filter((number) => number < 0);
+      console.log(onlyNegative);
+
+      const sumNegatives = onlyNegative.reduce((prev, current) => {
+        return prev + current;
+      }, 0);
+      console.log(sumNegatives);
+
+      //4. Wyświetl sumę elementów na indeksach parzystych:
+      //  `Suma elementów parzystych: 193`
+
+      const sumEvenIndexes = numbers.reduce((prev, current, index) => {
+        return index % 2 == 0 ? prev + current : prev;
+      }, 0);
+      console.log(sumEvenIndexes);
+    </script>
+  </body>
+</html>

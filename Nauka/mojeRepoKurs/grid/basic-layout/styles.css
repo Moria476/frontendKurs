@@ -1,0 +1,39 @@
+* {
+  font-size: x-large;
+  font-weight: bold;
+  margin: 0;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas:
+    "topbar topbar topbar"
+    "content ads sidebar"
+    "footer footer footer";
+
+  gap: 10px 20px;
+}
+
+header {
+  grid-area: topbar;
+  background-color: aqua;
+}
+article {
+  grid-area: content;
+  background-color: green;
+}
+aside {
+  grid-area: ads;
+  background-color: yellow;
+}
+nav {
+  grid-area: sidebar;
+  background-color: orangered;
+}
+footer {
+  grid-area: footer;
+  background-color: blue;
+}

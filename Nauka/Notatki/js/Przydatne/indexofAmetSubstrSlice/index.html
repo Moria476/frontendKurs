@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operacje na ciągach znaków</title>
+  </head>
+  <body>
+    <script>
+//js03
+      let paragraf =
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, sed natus dolores repellat fugit eaque exercitationem sapiente. Nam, commodi assumenda officiis autem tempora ad quis, quia porro ab placeat dignissimos.";
+
+      let ipsumStart =
+        paragraf.indexOf("ipsum") + " " + paragraf.lastIndexOf("ipsum");
+
+      // Wytnij pierwsz 5 znaków z paragrafu
+      let slice = paragraf.substr(0, 4);
+
+      // Wytnij ciąg znaków kończący się słowem 'amet'
+      let cut = paragraf.slice(0, paragraf.indexOf("amet") + 4);
+
+      // Wypisz wyniki
+      console.log(`pozycja  słowa ipsum w paragrafie = `, ipsumStart);
+      console.log(`paragraf bez pierwszych pieciu znaków = `, slice);
+      console.log(`paragraf bez amet = `, cut);
+      
+    </script>
+  </body>
+</html>

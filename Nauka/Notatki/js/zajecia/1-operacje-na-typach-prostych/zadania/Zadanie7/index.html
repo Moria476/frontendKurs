@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolean</title>
+  </head>
+  <body>
+    <script>
+      let zero = 0;
+      let pustyString = "";
+      let niezdefiniowany;
+      let pusty = null;
+      let slowo = "słoń";
+      let liczbaDodatnia;
+
+      // Porównaj zmienne bez zachowania typów
+      console.log(`0 jest równe null? ${zero == pusty}`);
+      console.log(`pustyString jest równe null? ${"" == null}`);
+      console.log(`pustyString jest równy 0? ${"" == 0}`);
+
+      // Porównaj zmienne z zachowaniem typów
+      console.log(`0 jest równe null? ${0 === null}`);
+      console.log(`pustyString jest równe null? ${"" === null}`);
+      console.log(`pustyString jest równy 0? ${"" === 0}`);
+
+      // Wykonaj operacje logiczne
+      console.log(`true AND true ${true && true}`);
+      console.log(`true AND false ${true && false}`);
+      console.log(`false AND true ${false && true}`);
+      console.log(`false AND false ${false && false}`);
+
+      console.log(`true OR true ${true || true}`);
+      console.log(`true OR false ${true || false}`);
+      console.log(`false OR true ${false || false}`);
+      console.log(`false OR false ${false || false}`);
+
+      // Uwaga na kolejność wykonywania operacji
+      console.log(`true OR false AND fals ${true || (false && false)}`);
+
+      console.log(`NOT true ${!true}`);
+      console.log(`NOT false ${!false}`);
+      console.log(`NOT (false OR true) ${!(false || true)}`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+let myLeads = [];
+const inputEl = document.getElementById("input-el");
+const inputBtn = document.getElementById("input-btn");
+const ulEL = document.getElementById("ul-el");
+
+inputBtn.addEventListener("click", function () {
+  myLeads.push(inputEl.value);
+  inputEl.value = "";
+  renderLeads();
+});
+function renderLeads() {
+  let listItems = "";
+  for (let i = 0; i < myLeads.length; i++) {
+    listItems +=
+      "<li><a target='_blank' href='" +
+      myLeads[i] +
+      "'>" +
+      myLeads[i] +
+      "</a></li>";
+    listItems += `
+      <li>
+          <a target='_blank' href='${myLeads[1]}'>" + ${myLeads[1]}
+          </a>
+      </li>`;
+    //const li = document.createElement("li");
+    //li.textContent = myLeads[i];
+    //ulEL.append(li);
+  }
+  ulEL.innerHTML = listItems;
+}
+const recipient = "james";
+const name = "Arek";
+const email = `
+Hey ${recipient} !
+
+ How is it going? 
+ 
+ Cheers ${name}
+`;
+console.log(email);

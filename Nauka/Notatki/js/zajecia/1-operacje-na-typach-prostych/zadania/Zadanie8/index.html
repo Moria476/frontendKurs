@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolean</title>
+  </head>
+  <body>
+    <script>
+      let zero = 0;
+      let jeden = 1;
+      let pustyString = "";
+      let niezdefiniowany;
+      let pusty = null;
+      let slowo = "słoń";
+      let liczbaDodatnia;
+
+      function zwracamDwa() {
+        console.log("zwracam dwa");
+        return 2;
+      }
+
+      function zwracamTrzy() {
+        console.log("zwracam trzy");
+        return 3;
+      }
+
+      // Wykonaj operacje logiczne
+      console.log(`jeden AND slowo ${jeden && slowo}`);
+      console.log(`zero AND jeden ${zero && jeden}`);
+      console.log(`niezdefiniowany AND slowo ${niezdefiniowany && slowo}`);
+      console.log(`pustyString AND slowo ${pustyString && slowo}`);
+
+      console.log(`jeden OR slowo ${jeden || slowo}`);
+      console.log(`zero OR jeden ${zero || jeden}`);
+      console.log(`niezdefiniowany OR slowo ${niezdefiniowany || slowo}`);
+      console.log(`pustyString OR slowo ${pustyString || slowo}`);
+
+      console.log(
+        `zero AND wynikowi funkcji zwracamDwa ${zero && zwracamDwa()}`
+      );
+      console.log(
+        `jeden AND wynikowi funkcji zwracamTrzy ${jeden && zwracamTrzy()}`
+      );
+    </script>
+  </body>
+</html>

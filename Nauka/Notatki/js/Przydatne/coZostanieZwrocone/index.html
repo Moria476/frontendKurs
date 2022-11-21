@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolean</title>
+  </head>
+  <body>
+    <script>
+      let zero = 0;
+      let jeden = 1;
+      let pustyString = "";
+      let niezdefiniowany;
+      let pusty = null;
+      let slowo = "słoń";
+      let liczbaDodatnia;
+
+      function zwracamDwa() {
+        console.log("zwracam dwa");
+        return 2;
+      }
+
+      function zwracamTrzy() {
+        console.log("zwracam trzy");
+        return 3;
+      }
+
+      // Wykonaj operacje logiczne
+// js03
+      console.log(`jeden AND slowo ${jeden && slowo}`);
+      console.log(`zero AND jeden ${zero && jeden}`);
+      console.log(`niezdefiniowany AND slowo ${niezdefiniowany && slowo}`);
+      console.log(`pustyString AND slowo ${pustyString && slowo}`);
+
+      console.log(`jeden OR slowo ${jeden || slowo}`);
+      console.log(`zero OR jeden ${zero || jeden}`);
+      console.log(`niezdefiniowany OR slowo ${niezdefiniowany || slowo}`);
+      console.log(`pustyString OR slowo ${pustyString || slowo}`);
+
+      console.log(
+        `zero AND wynikowi funkcji zwracamDwa ${zero && zwracamDwa()}`
+      );
+      console.log(
+        `jeden AND wynikowi funkcji zwracamTrzy ${jeden && zwracamTrzy()}`
+      );
+
+      console.log(true + false); //1
+        console.log(12 / "6")//2
+        console.log("number" + 15 + 3)// number153
+        console.log(15 + 3 + "number")//18number 
+        console.log([1] > null)//true
+        console.log("foo" + + "bar")//fooNaN
+        console.log('true' == true)//false
+        console.log(false == 'false')//false
+        console.log(null == '')//false
+        console.log(!!"false" == !!"true")// true
+        console.log([`x`] == `x`)// true
+        console.log([] + null + 1)//null1
+        console.log([1,2,3] == [1,2,3])//false
+        console.log({}+[]+{}+[1])// [object Object][object Object]1
+        console.log(!+[]+[]+![])//truefalse
+        console.log(new Date(0) - 0)//0
+        console.log(new Date(0) + 0)//Thu Jan 01 1970 01:00:00 GMT+0100 (czas środkowoeuropejski standardowy)0
+    </script>
+  </body>
+</html>

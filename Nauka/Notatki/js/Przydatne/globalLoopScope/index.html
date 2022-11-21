@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 3</title>
+  </head>
+  <body>
+    <script>
+      let car1 = "volkswagen";
+      function variablesVehicle() {
+        console.log(car1);  
+        car1 = "mitsubishi";
+        console.log(car1);
+      }
+      variablesVehicle(); //volkswagen, mitsubishi  || lambo, mitsubishi, mitsubishi || mitsubishi,  mitsubishi
+      do {                // wykonanie funckji zamienia global
+        let car1 = `lamborghini`;
+        console.log(car1);
+       // variablesVehicle();
+      } while (false);
+      variablesVehicle(); // volkswagen, mitsubishi  || lambo, mitsubishi, mitsubishi
+    </script>             // pętla nie zamienia globala
+  </body>
+</html>

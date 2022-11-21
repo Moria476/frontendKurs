@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obiekt Math</title>
+  </head>
+
+  <body>
+    <script>
+      let tablica = [17, 45, 23, 67, 7];
+      let najmniejsza = tablica[0];
+      let najwieksza = tablica[0];
+      // Oblicz największy element z tablicy
+      for (i = 0; i < tablica.length; i++) {
+        if (najmniejsza > tablica[i]) {
+          najmniejsza = tablica[i];
+        }
+      }
+
+      for (i = 0; i < tablica.length; i++) {
+        if (najwieksza < tablica[i]) {
+          najwieksza = tablica[i];
+        }
+      }
+
+      // 3. Oblicz 5 potęgę dwójki
+      let potega = Math.pow(2, 5);
+
+      // 4. Oblicz pierwiastek kwadratowy z 64
+      let pierwiastek = Math.sqrt(64);
+
+      // 5. Wypisz wyniki
+      console.log(`${tablica} najmniejesza = `, najmniejsza);
+      console.log(`${tablica} najwieksza= `, najwieksza);
+      console.log(`pierwiastek z 64 = `, pierwiastek);
+      console.log(`5 potega z dwójki= `, potega);
+    </script>
+  </body>
+</html>

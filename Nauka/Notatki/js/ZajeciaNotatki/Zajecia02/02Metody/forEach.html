@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users = [
+        {
+          name: "Adam",
+          age: 16,
+          city: "Kraków",
+          job: "Carpenter",
+        },
+        {
+          name: "Piotr",
+          age: 33,
+          city: "Warszawa",
+          job: "Engineer",
+        },
+        {
+          name: "Julia",
+          age: 20,
+          city: "Łódź",
+          job: "Medic",
+        },
+        {
+          name: "Henryk",
+          age: 33,
+          city: "Łódź",
+          job: "Shop Assistant",
+        },
+        {
+          name: "Kamila",
+          age: 25,
+          city: "Łódź",
+          job: "Barber",
+        },
+      ];
+
+      function displayCity(value, index, array) {
+        console.log(value.city);
+      }
+      const userCity = users.forEach(displayCity);
+
+      function displayAge(value, index, array) {
+        if (value.age % 5 === 0) {
+          console.log(`${value.age} + obchodzi właśnie 5-lecie`);
+        } else {
+          console.log(value.age);
+        }
+      }
+      const userAge = users.forEach(displayAge);
+    </script>
+</body>
+</html>

@@ -1,31 +1,7 @@
-<a href='https://infoshareacademy.com/'><img src='https://infoshareacademy.com/wp-content/themes/infoshare/src/images/logo.svg' height='60' alt='infoShare Academy Logo' aria-label='https://infoshareacademy.com/' /></a>
-
-# Pętle i metody do pracy z tablicami
-
-## Plan
-
-1. wprowadzenie
-2. metody tablicowe `.map`, `.filter`, `.forEach`, `.reduce`
-3. iteracje z uzyciem for ..of, for.. in
-
-4. chaining
-5. Object.defineProperty()
-6. `flatMap()` i `reduceRight()`
-
-## Przydatne linki
-
-1. [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 
-
-## Mozliwosci metod metod tablicowych
-
-### `forEach`
-
-- iteracja po elementach
 
 ```js
-const numbers = [54, 44, 72, 65];
 
 const users = [
   {
@@ -60,15 +36,6 @@ const users = [
   },
 ];
 ```
-
-#### Ćwiczenia
-
-1. Wyswietl wszystkie miasta, które znajduja sie w tablicy
-2. Wyświetl wiek kazdej oraz czy obchodzi właśnie X-lecie ( moze byc 5 lub 10 lat )
-
-### `map`
-
-- zwraca tablice
 
 ```js
 const servers = [

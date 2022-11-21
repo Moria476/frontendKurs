@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const servers = [
+        { ip: "192.268.0.1", name: "Server 1", app: "Random App 12" },
+        { ip: "192.55.32.3", name: "Server 2", app: "Random App 84" },
+        { ip: "192.3.3.3", name: "Server 3", app: "Random App 44" },
+        { ip: "192.55.65.2", name: "Server 4", app: "Random App 54" },
+      ];
+
+      const serversMap = servers.map((server) => {
+        return server.ip;
+      });
+      console.log(serversMap);
+
+
+    </script>
+</body>
+</html>

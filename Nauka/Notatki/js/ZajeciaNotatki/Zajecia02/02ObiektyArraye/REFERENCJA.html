@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      ```js   
+//## Referencja
+
+Porównanie dwóch identycznie zbudowanych obiektów :
+
+
+console.log({ name: "John" } === { name: "John" }); // false
+
+
+Dlaczego? Poniewaz do obiektów odwołujemy się przez referencję, czyli innymi słowy - powyższe dwa, identycznie "strukturalnie" obiekty znajdują się w innym miejscu w pamięci i dlatego te obiekty nie są tożsame!
+
+Dla typów prostych - następuje kopiowanie:
+
+
+
+let name = "Adam";
+let newName = name;
+
+console.log(name); // 'Adam'
+console.log(newName); // 'Adam'
+
+name = "Andrzej";
+console.log(newName); // 'Adam' <-- cały czas mamy poprzednią skopiowaną wartość w pamięci
+
+
+W uproszczeniu, należy rozumieć, że typy referencyjne nie są "kopiowane", a właśnie przekazywane "przez referencję" (mamy jeden obiekt, do którego wiele "etykiet", czyli zmiennych kieruje):
+
+Dla typów złozonych ( referencyjnych ) nie następuje kopiowanie, a "przekazywanie przez referencję" ( jeden obiekt w pamięci a wiele "etykiet" )
+
+
+const user = {
+  name: "Adam",
+  age: 28,
+  hobbies: ["Programowanie", "Bieganie"],
+};
+console.log(user); // { name: 'Adam', age: 28, hobbies: ['Programowanie', 'Bieganie'] }
+
+const newUser = user;
+console.log(newUser); // { name: 'Adam', age: 28, hobbies: ['Programowanie', 'Bieganie'] }
+
+user.name = "Andrzej";
+// UWAGA: newUser "wskazuje" na ten sam obiekt w pamięci, więc jakakolwiek modyfikacja tego obiektu (tutaj: z poziomu user lub newUser) zmodyfikuje jeden i ten sam obiekt!
+console.log(newUser); // { name: 'Andrzej', age: 28, hobbies: ['Programowanie', 'Bieganie'] }
+
+```;
+    </script>
+  </body>
+</html>

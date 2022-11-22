@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-         const servers = [
+      const servers = [
         { ip: "192.268.0.1", name: "Server 1", app: "Random App 12" },
         { ip: "192.55.32.3", name: "Server 2", app: "Random App 84" },
         { ip: "192.3.3.3", name: "Server 3", app: "Random App 44" },
@@ -20,7 +20,13 @@
       });
       console.log(serversMap);
 
+      //# Cwiczenia
+      //3. Zwróć tablicę która zawiera numery aplikacji (same cyfry)
 
+      const serversMapAppNumbers = servers.map((server) => {
+        return +server.app.slice(-2); //zmiana stringu na numer +
+      });
+      console.log(serversMapAppNumbers);
     </script>
-</body>
+  </body>
 </html>

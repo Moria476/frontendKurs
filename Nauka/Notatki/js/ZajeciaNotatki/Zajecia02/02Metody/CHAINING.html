@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const cities = [
+        { name: "New York", population: 14, country: "US" },
+        { name: "Gdansk", population: 5, country: "PL" },
+        { name: "Berlin", population: 7, country: "DE" },
+        { name: "Moscow", population: 22, country: "RU" },
+        { name: "Rome", population: 15, country: "IT" },
+      ];
+      //Na podstawie tabeli z poprzedniego zadania odfiltruj miasta z
+      //populacja mniejsza niz 10, a następnie zwróć tablicę ich kodów krajowych.
+
+      const cityPopulationLessThan10 = cities.filter((city) => {
+        return city.population < 10;
+      });
+
+      const filteredCities2 = cityPopulationLessThan10.map((city) => {
+        return city.country;
+      });
+      console.log(filteredCities2);
+
+      function filteredCities3(cities) {
+        //chaining
+        return cities
+          .filter((city) => {
+            return city.population < 10;
+          })
+          .map((city) => {
+            return city.country;
+          });
+      }
+      console.log(filteredCities3(cities));
+
+      const filteredCities4 = cities
+        .filter((city) => {
+          return city.population < 10;
+        })
+        .map((city) => {
+          return city.country;
+        });
+
+      console.log(filteredCities4);
+    </script>
+  </body>
+</html>

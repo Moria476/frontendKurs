@@ -39,13 +39,14 @@
       //3. Wyświetl sumę elementów tylko ujemnych:
       //  `Suma elementów ujemnych: -134`
 
-      const onlyNegative = numbers.filter((number) => number < 0);
-      console.log(onlyNegative);
-
-      const sumNegatives = onlyNegative.reduce((prev, current) => {
-        return prev + current;
-      }, 0);
-      console.log(sumNegatives);
+      const sumOnlyNegative = numbers
+        .filter((number) => {
+          return number <= 0;
+        })
+        .reduce((prev, curr) => {
+          return (prev += curr);
+        }, 0);
+      console.log(sumOnlyNegative);
 
       //4. Wyświetl sumę elementów na indeksach parzystych:
       //  `Suma elementów parzystych: 193`

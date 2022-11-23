@@ -8,18 +8,37 @@
   </head>
   <body>
     <script>
-      function check(array) {
+      //Napisz funkcję `check()`, która przyjmuje w parametrze tablicę - w zależności od długości tablicy - funkcja powinna zwrócić odpowiedni string z kolorem:
+
+      //- 1 = "#green"
+      //- 2 = "#red"
+      //- 3 = "#blue"
+      //- Każdy inny = "#black"
+
+      //Użyj `switch` statement.
+
+      const check = (array) => {
         switch (array.length) {
           case 1:
             return "green";
+            break;
           case 2:
             return "red";
+            break;
           case 3:
             return "blue";
+            break;
           default:
             return "black";
+            break;
         }
-      }
+      };
+
+      console.log(check([1, 2, 34]));
+      console.log(check([1, 2, 34, 1]));
+      console.log(check([]));
+      console.log(check([1, 2]));
+      console.log(check([1]));
     </script>
   </body>
 </html>

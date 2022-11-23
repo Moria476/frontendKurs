@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //    ### Zadanie 19.
+
+      //Czy zostanę junior developerem? Trudne pytanie! Napisz funkcję, która pomoże rozwikłać tę zagadkę.
+
+      //Wiemy, że żeby zostać junior developerem trzeba spełnić 2 warunki jednocześnie:
+
+      //1. Przerobić odpowiednio dużo zadań (minimum 100)
+      //2. Przepracować w czasie wolnym co najmniej 80h
+
+      //Tablica `students` zawiera ilość aspirujących developerów, a obiekt `requirements` zawiera opisane wyżej wymagania:
+
+      ```javascript
+const students = [
+  { name: "Mariusz", tasksDone: 150, hoursSpent: 160 },
+  { name: "Ewelina", tasksDone: 1, hoursSpent: 1 },
+  { name: "Alicja", tasksDone: 100, hoursSpent: 80 },
+  { name: "Marek", tasksDone: 200, hoursSpent: 40 },
+  { name: "Dagmara", tasksDone: 50, hoursSpent: 100 },
+];
+
+const requirements = {
+  minHoursSpent: 80,
+  minTasksDone: 100,
+};
+``` //Napisz funkcję `checkJuniorReq` - powinna ona zwracać string zawierający imiona osób którzy są na dobrej drodze do zostania Juniorem oraz osoby, które trzeba pogonić do pracy. Wynikowy kod może wyglądać następująco:
+      ```javascript
+"Mariusz, Alicja - gratulacje! Ciężka praca popłaca! Ewelina, Marek, Dagmara - DO ROBOTY LENIE!";
+```;
+
+      const students = [
+        { name: "Mariusz", tasksDone: 150, hoursSpent: 160 },
+        { name: "Ewelina", tasksDone: 1, hoursSpent: 1 },
+        { name: "Alicja", tasksDone: 100, hoursSpent: 80 },
+        { name: "Marek", tasksDone: 200, hoursSpent: 40 },
+        { name: "Dagmara", tasksDone: 50, hoursSpent: 100 },
+      ];
+
+      const requirements = {
+        minHoursSpent: 80,
+        minTasksDone: 100,
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ### Zadanie 23.
+      //Mamy obiekt `idUsers` w którym każdym kluczem jest `id` użytkownika, a przypisana do niego wartość jest jego danymi. Napisz funkcję `correctData()` która zamieni to na tablicę użytkowników tak, aby każdy element oprócz danych zawierał też pole `id` w następujący sposób:
+
+      ```javascript
+[
+  {
+    id: 243,
+    firstName: "Yorker",
+    lastName: "Surgey",
+    email: "ysurgey0@census.gov",
+    jobTitle: "VP Accounting"
+  },
+  {
+  ...
+  },
+]
+```;
+
+      const idUsers = {
+        243: {
+          firstName: "Yorker",
+          lastName: "Surgey",
+          email: "ysurgey0@census.gov",
+          jobTitle: "VP Accounting",
+        },
+        643: {
+          firstName: "Lanny",
+          lastName: "Sollime",
+          email: "lsollime1@flavors.me",
+          jobTitle: "VP Quality Control",
+        },
+        765: {
+          firstName: "Cy",
+          lastName: "Vautrey",
+          email: "cvautrey2@google.cn",
+          jobTitle: "Assistant Media Planner",
+        },
+        17: {
+          firstName: "Alfie",
+          lastName: "Biggerstaff",
+          email: "abiggerstaff3@shop-pro.jp",
+          jobTitle: "Project Manager",
+        },
+        6532: {
+          firstName: "Bronnie",
+          lastName: "Murrill",
+          email: "bmurrill4@mapquest.com",
+          jobTitle: "Automation Specialist I",
+        },
+        11: {
+          firstName: "Isiahi",
+          lastName: "Dooman",
+          email: "idooman5@si.edu",
+          jobTitle: "Office Assistant II",
+        },
+        7907: {
+          firstName: "Lizbeth",
+          lastName: "Clowney",
+          email: "lclowney6@unc.edu",
+          jobTitle: "Desktop Support Technician",
+        },
+        144: {
+          firstName: "Lindsey",
+          lastName: "Digan",
+          email: "ldigan7@bigcartel.com",
+          jobTitle: "Technical Writer",
+        },
+        543: {
+          firstName: "Nelly",
+          lastName: "Durden",
+          email: "ndurden8@amazon.com",
+          jobTitle: "Software Test Engineer II",
+        },
+        444: {
+          firstName: "Pascal",
+          lastName: "Rosenfrucht",
+          email: "prosenfrucht9@hc360.com",
+          jobTitle: "GIS Technical Architect",
+        },
+      };
+    </script>
+  </body>
+</html>

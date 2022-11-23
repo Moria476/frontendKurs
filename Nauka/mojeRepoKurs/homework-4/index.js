@@ -22,6 +22,18 @@ while(count < int)
 pattern("$", 5);
 pattern("$", 17);
 pattern("@", 3);
+// alternative
+
+function pattern1(sign, number) {
+    let array = [];
+    for (let i = 0; i < number; i++) {
+      array.push(sign);
+    }
+    return array.join("-");
+  }
+console.log(pattern1("$", 5))
+console.log(pattern1("$", 17))
+console.log(pattern1("@", 3))
 
 //task3
 
@@ -41,7 +53,13 @@ console.log(evenNumbersOnly([1, 2, 3, 4, 5, 6, 7]));
 console.log(evenNumbersOnly(["Czasem", 12, "Słońce", 3, "czasem", 600, "deszcz"])); 
 console.log(evenNumbersOnly([{}, {}, [], [], "abc", 2])); 
 console.log(evenNumbersOnly(["a", null, true, undefined, {}, []])); 
+//alternative 
 
+const evenNumbersOnly1 = (array) => array.filter((value) => typeof value === "number" && value % 2 === 0);
+console.log(evenNumbersOnly1([1, 2, 3, 4, 5, 6, 7]))
+console.log(evenNumbersOnly1(["Czasem", 12, "Słońce", 3, "czasem", 600, "deszcz"]))
+console.log(evenNumbersOnly1([{}, {}, [], [], "abc", 2]))
+console.log(evenNumbersOnly1(["a", null, true, undefined, {}, []]))
 //task 4
 
 
@@ -121,3 +139,11 @@ isPasswordCorrect("infoShare"); // false
 isPasswordCorrect("qwerty123"); // false
 isPasswordCorrect("qwerty123!"); // true
 isPasswordCorrect("!qw12"); // false
+
+//alternative
+
+const isPasswordCorrect1 = (password) => (/^(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#\/,.;:?&]{6,}$/.test(password) ? true : false);
+console.log(isPasswordCorrect1("infoShare")); // false
+console.log(isPasswordCorrect1("qwerty123")); // false
+console.log(isPasswordCorrect1("qwerty123!")); // true
+console.log(isPasswordCorrect1("!qw12")); // false

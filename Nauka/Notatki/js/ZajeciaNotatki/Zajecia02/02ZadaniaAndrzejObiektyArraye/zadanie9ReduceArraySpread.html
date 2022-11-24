@@ -15,12 +15,12 @@
         ["black", "blue"],
         ["pink", "black", "white"],
       ];
-      const flatArray = (prev, current) => {
-        return [...prev, ...current];
-      };
 
-      const flatColorArray = usersFavColors.reduce(flatArray, []);
-      console.log(flatColorArray);
+      const flatColorArray1 = usersFavColors.reduce((prevArray, currArray) => {
+        return [...prevArray, ...currArray];
+      }, []);
+
+      console.log(flatColorArray1);
     </script>
   </body>
 </html>

@@ -8,11 +8,6 @@
   </head>
   <body>
     <script>
-      // ### Zadanie 10.
-
-      //Napisz funkcję `deleteComment()`, która na podstawie podanego `id` usunie z podanej tablicy `comments` określony komentarz.
-
-      // Zadanie 10.
       const comments = [
         { text: "Cool Beans", id: 123 },
         { text: "Love this", id: 133 },
@@ -20,7 +15,12 @@
         { text: "good bikes", id: 333 },
         { text: "so good", id: 433 },
       ];
-      function deleteComment(id, comments) {}
+
+      const deleteComment = (comment, idComment) => {
+        return comments.filter((comment) => comment.id !== idComment);
+      };
+      console.log(deleteComment(comments, 233));
+      console.log(comments);
     </script>
   </body>
 </html>

@@ -145,17 +145,34 @@
 
       //Przykład:
 
-      ```js
-[
-{id:1, first_name: "Kaylil", last_name: "Kaylil", full_name: "Kaylil Hovey"}
-{id:2 ,first_name: "Cesare", last_name: "Cesare", full_name: "Cesare Caroline"}
-{id:3 ,first_name: "Xaviera", last_name: "Xaviera", full_name: "Xaviera Danilchenko"}
-]
-```;
+      //[
+      //{id:1, first_name: "Kaylil", last_name: "Kaylil", full_name: "Kaylil Hovey"}
+      //{id:2 ,first_name: "Cesare", last_name: "Cesare", full_name: "Cesare Caroline"}
+      //{id:3 ,first_name: "Xaviera", last_name: "Xaviera", full_name: "Xaviera Danilchenko"}
+      //]
+      function reduceProperties(arrayOfObjects) {
+        newArray = [];
+        arrayOfObjects.forEach((person) => {
+          const {
+            email,
+            gender,
+            ip_address,
+            title,
+            job_title,
+            race,
+            company,
+            age,
+            ...newPerson
+          } = person;
+          newPerson[
+            "fullName"
+          ] = `${newPerson.first_name} ${newPerson.last_name}`;
+          newArray.push(newPerson);
+        });
+        console.log(newArray);
+      }
 
-      //## Zadania 11-15
-
-      //Dla zadań 10-14 musisz skorzystać z danych z pliku `data.js`.
+      reduceProperties(people);
     </script>
   </body>
 </html>

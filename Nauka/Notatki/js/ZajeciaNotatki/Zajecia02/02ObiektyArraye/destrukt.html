@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-              const { age, ...newPerson } = person; // destrukcja . usuniecie age i utworzenie nowego obiektu z ta sama referencja do person
+      const person = {
+        name: "Arek",
+        age: 28,
+        lastName: "Dudzinski",
+      };
+      const { age, ...newPerson } = person; // destrukcja . usuniecie age i utworzenie nowego obiektu z ta sama referencja do person
       console.log(newPerson);
-      const { lastName } = user; // usuniecie lastName z usera
-      console.log(user);
 
       /// z filmu o destructing in 100 sec
       const [one1, two1] = [1, 2, 3];
@@ -40,7 +43,6 @@
 
       const { shroom: mushroom } = objekt;
       console.log(mushroom);
-
     </script>
-</body>
+  </body>
 </html>

@@ -140,21 +140,11 @@
         },
       ];
 
-      const array = people.map((person) => {
-        return `${person.title} ${person.first_name} ${person.last_name} work as ${person.job_title} in ${person.company}`;
+      people.forEach((employee) => {
+        console.log(
+          `${employee.title} ${employee.first_name} ${employee.last_name} work as ${employee.job_title} in ${employee.company}`
+        );
       });
-      console.log(array);
-
-      //Wyświetl każdego z userów w konwencji: `title first_name last_name work as job_title in company`.
-
-      //Przykład:
-
-      ///```js
-      // Rev Kaylil Hovey work as Recruiting Manager in Browseblab
-      // Rev Cesare Caroline work as Computer Systems Analyst II in Wordtune
-      // Mr Xaviera Danilchenko work as Statistician IV in Rhynyx
-      // Honorable Shandy Sanford work as Data Coordiator in Topdrive
-      //```
     </script>
   </body>
 </html>

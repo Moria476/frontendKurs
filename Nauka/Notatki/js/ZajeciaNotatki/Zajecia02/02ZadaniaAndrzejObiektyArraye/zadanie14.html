@@ -145,14 +145,22 @@
 
       //Przykład:
 
-      ```js
-// Kaylil is 33 years old
-// Xaviera is 55 years old
-// Shandy is 76 years old
-// Frederica is 89 years old
-// Together they have 253 years
-```;
+      // Kaylil is 33 years old
+      // Xaviera is 55 years old
+      // Shandy is 76 years old
+      // Frederica is 89 years old
+      // Together they have 253 years
 
+      const only30PlusWomens = people.filter((person) => {
+        return person.age > 30 && person.gender === "Female";
+      });
+      only30PlusWomens.forEach((person) => {
+        console.log(`${person.first_name} is ${person.age} years old`);
+      });
+      const sumAgeOfWomans = only30PlusWomens.reduce((prev, curr) => {
+        return prev + curr.age;
+      }, 0);
+      console.log(`Togeteher they have ${sumAgeOfWomans} years`);
       //## Zadania 11-15
 
       //Dla zadań 10-14 musisz skorzystać z danych z pliku `data.js`.

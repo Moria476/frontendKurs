@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 6</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #dangerZone {
+            border: dotted 5px grey;
+            background-color: blue;
+            width: 150px;
+            height: 150px;
+        }
+        #dangerZone.on {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="dangerZone" class="on"></div>
+    <button id="on">Włącz ochronę</button>
+    <button id="off">Wyłącz ochronę</button>
+    <script>
+       const dangerZone = document.getElementById('dangerZone');
+       const noTresspassing = () => {
+        alert('Zakaz wstępu');
+       }
+
+       dangerZone.addEventListener('mouseenter', noTresspassing);
+       // Dodaj do guzików włącz i wyłącz ochronę event listenery,
+       // które dodadzą bądź usuną noTresspassing handler i klasę `on` na elemencie dangerZone. 
+    </script>
+</body>
+</html>

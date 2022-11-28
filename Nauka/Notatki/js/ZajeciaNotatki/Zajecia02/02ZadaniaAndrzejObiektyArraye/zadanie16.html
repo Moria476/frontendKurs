@@ -30,6 +30,29 @@
         { first: "Lise", last: "Meitner", year: 1878, passed: 1968 },
         { first: "Hanna", last: "Hammarström", year: 1829, passed: 1909 },
       ];
+
+      inventors.sort((a, b) => parseFloat(a.year) - parseFloat(b.year));
+      //numArray.sort(function(a, b) {
+      //return a - b;
+      //});
+      console.log(inventors);
+
+      const sumAgeOfInvwentors = inventors.reduce((prev, curr) => {
+        return prev + (curr.passed - curr.year);
+      }, 0);
+      console.log(`Togeteher they have ${sumAgeOfInvwentors} years`);
+
+      function longestLivingInvestor(investors) {
+        investors.map((investor) => {
+          return (investor["age"] = investor.passed - investor.year);
+          return (investor = {
+            ...investor,
+          });
+        });
+        inventors.sort((a, b) => parseFloat(a.age) - parseFloat(b.age));
+      }
+      longestLivingInvestor(inventors);
+      console.log(inventors);
     </script>
   </body>
 </html>

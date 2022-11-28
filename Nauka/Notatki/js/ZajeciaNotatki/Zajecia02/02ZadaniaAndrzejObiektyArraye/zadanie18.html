@@ -12,11 +12,22 @@
 
       //Napisz funkcję `daysUntilChristmas()`, która zwróci liczbę dni do Świąt Bożego Narodzenia 🎅🏻🎄
 
-      //```js
+      //
       //daysUntilChristmas(); //  60 days left until Christmas!
-      //```
+      //
 
       //Funkcja nie przyjmuje żadnego parametru, opiera się zawsze na dzisiejszej dacie.
+      function daysUntilChristmas() {
+        today = new Date();
+        const christmas = new Date(`December 24 ${today.getFullYear()}`);
+
+        const differenceInTime = christmas.getTime() - today.getTime();
+        const differenceInDays = Math.round(
+          differenceInTime / (1000 * 3600 * 24)
+        );
+        console.log(`${differenceInDays} days left until Christmas!`);
+      }
+      daysUntilChristmas();
     </script>
   </body>
 </html>

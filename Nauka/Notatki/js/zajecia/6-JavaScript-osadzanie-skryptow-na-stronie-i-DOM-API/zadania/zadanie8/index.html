@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="index.js" defer></script>
+    <style>
+      .box {
+        border: 6px black dashed;
+        width: 250px;
+        height: 250px;
+        margin: 10px;
+      }
+      .box.green {
+        background-color: green;
+      }
+      .box.blue {
+        background-color: blue;
+      }
+      .circle {
+        border: 6px red dotted;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin: 25px;
+      }
+      .circle.pink {
+        background-color: pink;
+      }
+      .boxes {
+        display: flex;
+        flex-direction: row;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxes">
+      <div class="box green">
+        <div class="circle pink"></div>
+      </div>
+      <div class="box blue"></div>
+    </div>
+  </body>
+</html>

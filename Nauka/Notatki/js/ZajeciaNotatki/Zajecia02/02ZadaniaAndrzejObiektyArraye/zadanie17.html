@@ -11,10 +11,39 @@
       //  ### Zadanie 17.
 
       //Napisz funkcję `dayOfTheWeekYouWereBorn()`, która zwróci dzień tygodnia na podstawie daty Twoich urodzin.
+      function dayOfTheWeekYouWereBorn(brithday) {
+        const birthday = new Date(brithday);
+        let day1 = birthday.getDay();
 
-      ```js
-dayOfTheWeekYouWereBorn("November 30 1993"); // You were born on Tuesday
-```;
+        switch (day1) {
+          case 1:
+            day1 = "monday";
+            break;
+          case 2:
+            day1 = "tuesday";
+            break;
+          case 3:
+            day1 = "wednesday";
+            break;
+          case 4:
+            day1 = "thursday";
+            break;
+          case 5:
+            day1 = "friday";
+            break;
+          case 6:
+            day1 = "saturday";
+            break;
+          case 7:
+            day1 = "sunday";
+            break;
+        }
+
+        console.log(`you were born on ${day1}`);
+      }
+
+      dayOfTheWeekYouWereBorn("November 30 1993"); // You were born on Tuesday
+      dayOfTheWeekYouWereBorn("August 10 1994");
 
       //Skorzystaj z wbudowanego obiektu `Date`.
     </script>

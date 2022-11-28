@@ -151,12 +151,18 @@
 
       //Przykład:
 
-      ```js
-["Kaylil", "Muire", "Aristotle", "Mano", "Bryon"];
-```;
-      //## Zadania 11-15
+      //["Kaylil", "Muire", "Aristotle", "Mano", "Bryon"];
 
-      //Dla zadań 10-14 musisz skorzystać z danych z pliku `data.js`.
+      const newCollection = people.map((person) => {
+        person.full_name = `${person.first_name} ${person.last_name}`;
+        person["height"] = person.age + 100;
+        (person["weight"] = person.age + 10),
+          (person["bmi"] = (person.weight / (person.height / 100)) ^ 2);
+        return (person = {
+          ...person,
+        });
+      });
+      console.log(newCollection);
     </script>
   </body>
 </html>

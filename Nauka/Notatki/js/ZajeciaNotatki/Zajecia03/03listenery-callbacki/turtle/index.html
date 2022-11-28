@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 8</title>
+    <style>
+      .turtle {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background-color: green;
+        border: solid dashed darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="turtle"></div>
+    <script>
+      // 1. Zadanie stwórz event listener, który będzie reagował na wciśnięcia klawiszy.
+      // 2. Wciśnięcie klawiszy strzałek powinno spowodować przesunięcie pozycji "żółwią" o 25px w wybranym kierunku.
+      // 3. Wcięśniecie strzałki z shiftem powinno poruszyć żółwia o 50px
+
+      const myTurtle = document.getElementsByClassName("turtle")[0];
+      const turtleMover = (event) => {
+        const key = event.key;
+        console.log(key);
+        const top = myTurtle.style.top.slice(
+          0,
+          myTurtle.style.top.indexOf("px")
+        );
+        const left = myTurtle.style.left.slice(
+          0,
+          myTurtle.style.left.indexOf("px")
+        );
+        const rightBorder = window.innerWidth;
+        const downBorder = window.innerHeight;
+        const size = Number(
+          window
+            .getComputedStyle(myTurtle)
+            .width.slice(
+              0,
+              window.getComputedStyle(myTurtle).width.indexOf("px")
+            )
+        );
+        const move = 25;
+        console.log(left);
+        console.log(top);
+        switch (key) {
+          case "ArrowUp": {
+            myTurtle.style.top = `${Math.max(Number(top) - move, 0)}px`;
+            break;
+          }
+          case "ArrowDown": {
+            myTurtle.style.top = `${Math.min(
+              Number(top) + move,
+              downBorder - size
+            )}px`;
+            break;
+          }
+          case "ArrowLeft": {
+            myTurtle.style.left = `${Math.max(Number(left) - move, 0)}px`;
+            break;
+          }
+          case "ArrowRight": {
+            myTurtle.style.left = `${Math.min(
+              Number(left) + move,
+              rightBorder - size
+            )}px`;
+            break;
+          }
+          default: {
+            return;
+          }
+        }
+      };
+      window.addEventListener("keydown", turtleMover);
+    </script>
+  </body>
+</html>

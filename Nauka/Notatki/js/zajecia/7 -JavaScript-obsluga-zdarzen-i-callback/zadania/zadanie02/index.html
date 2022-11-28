@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 2</title>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      #circle {
+        border-radius: 50%;
+        border: dashed 5px green;
+        background-color: yellow;
+        width: 150px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="circle"></div>
+    <script>
+      /* Dodaj event listenery do elementu "circle", reagujące na najechanie i opuszczenie elementu kursorem myszki.
+           Każdy z handlerów powinien wypisać nazwę eventu, który go wywołał oraz jego atrybuty. */
+      const handler1 = (event) => {
+        console.log("event details: ", event);
+      };
+      const handler2 = (event) => {
+        console.log("event details: ", event);
+      };
+
+      const circle = document.getElementById("circle");
+
+      circle.addEventListener("mouseenter", handler1);
+      circle.addEventListener("mouseleave", handler2);
+    </script>
+  </body>
+</html>

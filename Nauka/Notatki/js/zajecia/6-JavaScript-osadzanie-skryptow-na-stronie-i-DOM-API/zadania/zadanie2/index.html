@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Hello after DOMContentLoaded!");
+      });
+    </script>
+  </head>
+  <body>
+    <script src="header.js"></script>
+    <script src="header-async.js" async></script>
+    <script src="header-defer.js" defer></script>
+    <script src="footer.js"></script>
+    <!-- Dodaj skrypty do strony zgodnie z sugestiami nazwy.
+         Zobacz w przeglądarce w jakiej kolejności zostaną wykonane. -->
+  </body>
+</html>

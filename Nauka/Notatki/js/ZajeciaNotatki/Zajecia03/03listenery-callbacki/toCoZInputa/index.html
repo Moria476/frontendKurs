@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 3</title>
+  </head>
+  <body>
+    <input id="search" type="search" placeholder="Wpisz aby wyszukać" />
+    <h2>Szukana fraza: <span id="phrase"></span></h2>
+    <script>
+      // Dodaj event listener do elementu input, który powtórzy szukaną frazę w elemencie o id "phrase".
+      document.getElementById("search").addEventListener("input", function (e) {
+        const text = e.target.value;
+        console.log(text);
+        document.getElementById("phrase").innerText = text;
+      });
+    </script>
+  </body>
+</html>

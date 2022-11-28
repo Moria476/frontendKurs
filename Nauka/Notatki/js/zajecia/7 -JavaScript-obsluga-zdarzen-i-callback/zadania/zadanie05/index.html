@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 5</title>
+  </head>
+  <body>
+    <form action="/submit">
+      <label for="name">Imię</label>
+      <input id="name" />
+
+      <input id="submit" type="submit" value="Zapisz" />
+    </form>
+    <script>
+      // Dodaj event listener do guzika zapisywania, tak aby powstrzymać domyślne zachowanie formularza,
+      // oraz wypisz wartość pola input do konsoli.
+      const submitButton = document.getElementById("submit");
+      submitButton.addEventListener("zonk", (event) => {
+        event.preventDefault();
+        console.log("hello zonk", event);
+      });
+      const myEvent = new Event("zonk");
+      const myCustomEvent = new CustomEvent("zonk", {
+        detail: {
+          name: "Kapitan",
+          lastname: "Tsubasa",
+        },
+      });
+      // submitButton.dispatchEvent(myEvent); trzeba to wywolac samemu w konsoli
+    </script>
+  </body>
+</html>

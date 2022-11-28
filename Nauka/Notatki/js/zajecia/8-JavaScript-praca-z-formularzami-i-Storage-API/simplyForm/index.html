@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<div>Polecenie:
+    <div>
+        <p>Twoim zadaniem jest zbudować formularz.</p>
+        <p>Formularz powinien mieć następujące pola: Imie, Pseudonim, Data urodzenia (wykorzystaj type='date'), Pytanie czy akceptuje warunki rejestracji (checkbox).</p>
+        <p>Jeżeli użytkownik akceptuje warunki, wyświetl mu dodatkową klauzule informującą o tym, że może w każdej chwili zrezygnować z umowy, jezeli nie zaznaczyl checkboxa - ukryj dodatkowa klauzule</p>
+        <p>Po kliknięciu submit wyświetl wszystkie zebrane informacje w konsoli w formacie JSON, gdzie klucz to nazwa pola.</p>
+        <p>Oczekiwany efekt: <a href="./Jun-11-2021%2017-27-13.gif">Tutaj</a></p>
+    </div>
+
+    <form id="userForm" name="userForm">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="username" placeholder="Username">
+        <input type="date" name="bday">
+        <label for="isAccepting">Czy akceptujesz warunki?</label>
+
+        <input id="isAccepting" type="checkbox" name="isAccepting">
+
+        <button type="submit">Save</button>
+    </form>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

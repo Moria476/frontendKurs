@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<title>Tip calculator app</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="title__div">
+				<h1>SPLI</h1>
+				<h1>TTER</h1>
+			</div>
+			<div class="main__div">
+				<form id="userForm" name="userForm">
+					<div class="main__div__left">
+						<div class="main__div__left__bill">
+							<p class="bill__bill">Bill</p>
+							<div class="main__div__left__bill__input">
+								<img
+									class="icon__dollar"
+									src="images/icon-dollar.svg"
+									alt="icon dollar"
+								/>
+								<input  type="text" name="billPrice" placeholder="enter value" />
+							</div>
+						</div>
+						<div class="main__div__left__tip">
+							<p class="tip__select">Select Tip %</p>
+							<div class="main__div__left__tip__grid">
+								<button class="tip__button fivePercent disabled">5%</button>
+								<button class="tip__button tenPercent disabled">10%</button>
+								<button class="tip__button fifteenPercent disabled">15%</button>
+								<button class="tip__button twentyFivePercent disabled">25%</button>
+								<button class="tip__button fiftyPercent disabled">50%</button>
+								<Input class="tip__button custom disabled__custom" placeholder="Custom">
+								</Input>
+							</div>
+						</div>
+						<div class="main__div__left__people">
+							<div class="main__div__left__people__ptags">
+							<p class="people__number">Number of People</p>
+							<p class="cant__be__zero">Can't be zero</p>
+						</div>
+							<div class="main__div__left__people__input">
+								<img
+									class="icon__person"
+									src="images/icon-person.svg"
+									alt="icon person"
+								/>
+								<input type="text" name="numberOfPerson" placeholder="enter value" />
+							</div>
+						</div>
+					</div>
+					<div class="main__div__right">
+						<div class="main__div__right__tipTotalWrapper">
+							<div class="main__div__right__tip">
+								<div class="main__div__right__tip__left">
+									<p class="tip__tip">Tip Amount</p>
+									<p class="tip__person">/ person</p>
+								</div>
+								<div class="main__div__right__tip__right">$0.00</div>
+							</div>
+							<div class="main__div__right__total">
+								<div class="main__div__right__total__left">
+									<p class="total__total">Total</p>
+									<p class="total__person">/ person</p>
+								</div>
+								<div class="main__div__right__total__right">$0.00</div>
+							</div>
+						</div>
+						<div class="main__div__right__reset">
+							<button type="submit" class="reset__button reset__disabled">RESET</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="footer__div"></div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

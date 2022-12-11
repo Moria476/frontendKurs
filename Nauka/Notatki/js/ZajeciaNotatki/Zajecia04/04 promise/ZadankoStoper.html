@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+        .box {
+          height: 100px;
+          width: 100px;
+          background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+<!--<div class="box"></div>-->
+
+<div id="time">0</div>
+<button id="start">START</button>
+<button id="stop">STOP</button>
+<button id="reset">RESET</button>
+<button id="pause">PAUSE</button>
+
+		<script>
+			const timeArea = document.querySelector("#time");
+			const startButton = document.querySelector("#start");
+			const stopButton = document.querySelector("#stop");
+			const resetButton = document.querySelector("#reset");
+
+			let timerId;
+
+			const displayTimeValue = (timeValue) => {
+				console.log(172, timeValue);
+				timeArea.innerText = timeValue;
+			};
+
+			const startTimer = () => {
+				let timeValue = 0;
+
+				timerId = setInterval(() => {
+					console.log(179, timeValue);
+					timeValue++;
+					displayTimeValue(timeValue);
+				}, 1000);
+			};
+
+			const stopTimer = () => {
+				if (timerId) {
+					clearInterval(timerId);
+					timerId = null;
+				}
+			};
+
+			startButton.addEventListener("click", () => {
+				startTimer();
+			});
+
+			stopButton.addEventListener("click", () => {
+				stopTimer();
+			});
+
+			resetButton.addEventListener("click", () => {
+				displayTimeValue(0);
+
+				stopTimer();
+				startTimer();
+			});
+		</script>
+	</body>
+</html>

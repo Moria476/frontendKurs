@@ -1,19 +1,7 @@
 // 1. Stwórz własny obiekt typu Promise, który zakończy się sukcesem po 10 sekundach.
 // console.log("Poczatek")
 
-const ourPromise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve('Jestem Jan');
-  }, 10000)
-})
 
-console.log(ourPromise)
-
-ourPromise.then((result) => {
-  console.log(result);
-}).catch(() => {
-  console.log('Byl blad')
-})
 
 
 

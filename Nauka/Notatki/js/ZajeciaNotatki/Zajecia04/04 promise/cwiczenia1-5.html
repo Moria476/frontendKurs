@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button id="button">kliknij mnie</button>
+		<script>
+			// 1. Stwórz własny obiekt typu Promise, który zakończy się sukcesem po 10 sekundach.
+			// console.log("Poczatek")
+
+			const myPromise = new Promise((resolve, rejected) => {
+				setTimeout(() => {
+					resolve("Poczatek");
+				}, 10000);
+			});
+			myPromise.then((fullfilledPromise) => {
+				console.log(fullfilledPromise);
+			});
+			// 2. Analogicznie do zadania 1. stwórz Promise, który zakończy się porażką po 10 sekundach
+			const myPromise1 = new Promise((resolve, rejected) => {
+				setTimeout(() => {
+					rejected("cos poszlo nie tak");
+				}, 10000);
+			});
+			myPromise1.catch((unfullfilledPromise) => {
+				console.log(unfullfilledPromise);
+			});
+			// 3. Napisz funkcję, która zwraca nowy obiekt promise.
+			// Funkcja będzie przyjmowała dowolną wartość liczbową.
+			// Promise będzie kończył się sukcesem, jeśli przekazana liczba jest większa niz 10,
+			// jeśli jest mniejsza, Promise będzie kończył się porażką.
+			const newFunction = (number) => {
+				return new Promise((resolve, rejected) => {
+					if (number > 10) {
+						resolve("wieksza niz 10");
+					} else {
+						rejected("porazka mniej niz 10");
+					}
+				});
+			};
+			newFunction(11).then((fullfilledPromise) => {
+				console.log(fullfilledPromise);
+			});
+			newFunction(3).catch((unFullfilledPromise) => {
+				console.log(unFullfilledPromise);
+			});
+
+			// 4. Napisz 3 niezalezne od siebie promise,
+			// ktore zakoncza sie sukcesem po 1 sekundzie, 5 sekundach i trzeci po 10 sekundach.
+			// Poczekaj na zakonczenie wszystkich trzech promisow i wyswietl na
+			// kosoli wyniki tych promisów
+			const independentPromise1 = new Promise((resolve, rejected) => {
+				setTimeout(() => {
+					resolve("promise1 zakończony");
+				}, 1000);
+			});
+			const independentPromise2 = new Promise((resolve, rejected) => {
+				setTimeout(() => {
+					resolve("promise2 zakończony");
+				}, 5000);
+			});
+
+			const independentPromise3 = new Promise((resolve, rejected) => {
+				setTimeout(() => {
+					resolve("promise3 zakończony");
+				}, 10000);
+			});
+
+			Promise.all([
+				independentPromise1,
+				independentPromise2,
+				independentPromise3,
+			]).then((values) => {
+				console.log(values);
+			});
+			// 5. Promise można wykorzystywać na wiele sposobów. Można też wykorzystać Promise,
+			// aby poczekać na jakąś interakcje z użytkownikiem.
+			// Np. stwórz Promise, który przejdzie w stan fulfilled dopiero, jak user przyciśnie
+			// określony przycisk.
+
+			//* Możesz też dodać limit czasu na kliknięcie, np jeśli user nie kliknie w ciągu 3 sekund,
+			// Promise zostanie rejected
+
+			const button = document.querySelector("#button");
+			const clickFast = new Promise((resolve, rejected) => {
+				button.addEventListener("click", () => {
+					resolve("udalo sie");
+				});
+				setTimeout(() => {
+					rejected("za wolno");
+				}, 3000);
+			});
+
+			clickFast
+				.then((fullfilledPromise) => {
+					console.log(fullfilledPromise);
+				})
+				.catch((unFullfilledPromise) => {
+					console.log(unFullfilledPromise);
+				});
+		</script>
+	</body>
+</html>

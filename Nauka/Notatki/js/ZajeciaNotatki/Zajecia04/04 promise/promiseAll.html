@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 4. Napisz 3 niezalezne od siebie promise,
+			// ktore zakoncza sie sukcesem po 1 sekundzie, 5 sekundach i trzeci po 10 sekundach.
+			// Poczekaj na zakonczenie wszystkich trzech promisow i wyswietl na
+			// kosoli wyniki tych promisów
+			const independentPromise1 = new Promise((resolve, rejected) => {
+				setTimeout(() => {
+					resolve("promise1 zakończony");
+				}, 1000);
+			});
+			const independentPromise2 = new Promise((resolve, rejected) => {
+				setTimeout(() => {
+					resolve("promise2 zakończony");
+				}, 5000);
+			});
+
+			const independentPromise3 = new Promise((resolve, rejected) => {
+				setTimeout(() => {
+					resolve("promise3 zakończony");
+				}, 10000);
+			});
+
+			Promise.all([
+				independentPromise1,
+				independentPromise2,
+				independentPromise3,
+			]).then((values) => {
+				console.log(values);
+			});
+		</script>
+	</body>
+</html>

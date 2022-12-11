@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const isReadyPromise = new Promise((resolve, reject) => {
+				const a = 2;
+				const b = 2;
+
+				setTimeout(() => {
+					const sum = a + b;
+
+					resolve(sum);
+				}, 5000);
+			});
+
+			console.log(83, isReadyPromise);
+
+			isReadyPromise
+				.then((calculationResult) => {
+					console.log(1, "JUPI UDALO SIE", calculationResult);
+					// throw new Error('lipa')
+				}) //,
+				//   (sum) => {
+				//  console.log(2, 'No jednak nie, ', sum)
+				// }
+				//  )
+				.catch((reason) => {
+					// jesli bylby blad narazie jest resolve fullfilled
+					console.log(3, "O kurde, jednak lipa", reason);
+				})
+				.finally(() => {
+					console.log("TO SIE WYKONA ZAWSZE ");
+				});
+		</script>
+	</body>
+</html>

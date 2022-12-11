@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const isReadyPromise = new Promise((resolve, reject) => {
+				const a = 2;
+				const b = 2;
+
+				setTimeout(() => {
+					const sum = a + b;
+
+					resolve(sum);
+				}, 5000);
+			});
+
+			const anotherPromise = isReadyPromise.then((sum) => {
+				console.log(sum);
+				const doubleSum = sum * 2;
+				return doubleSum; //resolve moze byc tylko w pierwszym promise
+			});
+			//	.then(() => {
+			//		return "bbb"; //console log ponizej zwroci bbb
+			//	})
+			//	.then(() => {
+			//		return doubleSum; //nie bedzie dzialac bo nie widzi doublesum
+			//	});
+
+			console.log("anotherPromise", anotherPromise);
+
+			setTimeout(() => {
+				console.log("anotherPromise", anotherPromise);
+			}, 7000);
+		</script>
+	</body>
+</html>

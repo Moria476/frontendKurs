@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      // const promise = new Promise(function (resolve, reject) {
+      //   setTimeout(() => resolve(1), 1000);
+      // });
+
+      // const promise2 = promise
+      //   .then((result) => {
+      //     //alert(result);
+      //     return result * 2;
+      //   })
+      //   .then((result) => {
+      //     // result jest undefined
+      //     console.log(result);
+      //     return "CIASTKO";
+      //   })
+      //   .then((result) => {
+      //     throw new Error("Błąd");
+      //     console.log(result);
+      //     return; // undefined
+      //   })
+      //   .then((result) => {
+      //     console.log(result);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
+
+      // const request = new XMLHttpRequest();
+
+      // request.addEventListener("load", function (event) {
+      //   const pikachu = JSON.parse(event.currentTarget.responseText);
+      //   console.log(pikachu);
+      // });
+      // request.open("GET", "https://jsonplaceholder.typicode.com/users");
+      // request.send();
+
+      // setInterval(function () {
+      //   console.log("Aktualizacja");
+      // }, 2000);
+
+      // const promise = fetch(
+      //   "https://jsonplaceholder.tygerktjn43jk5n4tjk453njicode.com/users"
+      // )
+      //   .catch((error) => {
+      //     console.log(error);
+      //   })
+      //   .then(function (response) {
+      //     const data = response.json(); // zwrócone Promise a nie lista elementow []
+      //     return data;
+      //   })
+      //   .then((result) => {
+      //     console.log(result);
+      //     //console.log(JSON.parse(result))
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
+
+      // // axios
+      // // async / await
+
+      //   const promise2 = await fetch(
+      //   "https://jsonplaceholder.tygerktjn43jk5n4tjk453njicode.com/users"
+      //   ).then(result => result.json())
+
+      //   console.log(promise2)
+
+      const asyncWolf = new Promise(function (resolve) {
+        setTimeout(function () {
+          resolve("🐺");
+        }, 1500);
+      });
+
+      const asyncRacoon = new Promise(function (resolve) {
+        setTimeout(function () {
+          resolve("🦝");
+        }, 5000);
+      });
+
+      // asyncWolf
+      //   .then((result) => {
+      //     console.log(result);
+      //     return asyncRacoon;
+      //   })
+      //   .then((result) => {
+      //     console.log(result);
+      //   });
+      //6,5
+
+      const pageLoading = fetch(
+        "https://jsonplaceholder.typode.com/users"
+      ).catch((error) => {
+        console.log(error)
+      });
+
+      // const pageLoading2 = fetch(
+      //   "https://jsonplaceholder.typicode.com/users"
+      // );
+      
+
+
+      const promise = Promise.all([pageLoading, asyncWolf, asyncRacoon ])
+      // 5
+
+      console.log(promise);
+      //console.log(promise3, promise2, promise)
+    </script>
+  </body>
+</html>

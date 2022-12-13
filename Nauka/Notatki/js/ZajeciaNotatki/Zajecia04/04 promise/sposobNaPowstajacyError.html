@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const promise = fetch(
+        "https://jsonplaceholder.tygerktjn43jk5n4tjk453njicode.com/users"
+      )
+        .catch((error) => {
+          console.log(error);
+        })
+        .then(function (response) {
+          const data = response.json(); // zwrócone Promise a nie lista elementow []
+          return data;
+        })
+        .then((result) => {
+          console.log(result);
+          console.log(JSON.parse(result));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>

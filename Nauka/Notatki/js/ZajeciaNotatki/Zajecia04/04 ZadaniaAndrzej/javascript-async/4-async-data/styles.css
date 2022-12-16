@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f4f4f4;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.person-info {
+  padding: 30px;
+  border: 2px solid white;
+}
+
+.person-info:hover {
+  padding: 30px;
+  border: 2px solid pink;
+}
+
+.firstNameLastName {
+  padding: 0 0 10px;
+  color: #333333;
+  font-size: 26px;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.jobTitle {
+  padding: 0 0 20px;
+  color: #e74c3c;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.emailAddress {
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.8em;
+}
+
+.highlight {
+  border: 2px solid red;
+}
+
+.error {
+  color: red;
+  margin: 20px 0;
+}
+
+button {
+  padding: 20px 30px;
+  background-color: #333333;
+  color: beige;
+  border-radius: 5px;
+  border: 1px solid beige;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 32px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  margin: 10px 0;
+  background: "#fff";
+  cursor: pointer;
+  width: 200px;
+  text-decoration: none;
+}

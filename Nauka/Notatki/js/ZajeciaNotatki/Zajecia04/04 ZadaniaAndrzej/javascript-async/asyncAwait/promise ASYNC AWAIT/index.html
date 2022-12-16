@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Loop</title>
+  </head>
+  <body>
+    <div class="go">Click Me</div>
+    <style>
+      body {
+        background-color: blueviolet;
+      }
+      .go {
+        background-color: whitesmoke;
+        margin: 2rem;
+        padding: 2rem;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s;
+      }
+
+      .go.circle {
+        border-radius: 50%;
+      }
+
+      .go.red {
+        background: red;
+      }
+
+      .go.purple {
+        background: purple;
+      }
+
+      .go.fade {
+        opacity: 0;
+      }
+    </style>
+    <script src="./script.js"></script>
+  </body>
+</html>

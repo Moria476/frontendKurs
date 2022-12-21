@@ -33,14 +33,11 @@ const toggleLoader = (flag) => {
     setTimeout(function () {
       loaderElement.className = "";
     }, 500);
+    loaderElement.className = "";
   }
 };
 
-// wyświetlanie toast
 const toast = (text) => {
-  const toastElement = document.getElementById("snackbar");
-  toastElement.innerHTML = text;
-  toastElement.className = "show";
   setTimeout(function () {
     toastElement.className = toastElement.className.replace("show", "");
   }, 3000);
@@ -48,79 +45,84 @@ const toast = (text) => {
 
 // pobieranie użytkowników
 const fetchCustomers = () => {
+  // TODO: ściągnij dane z api, wyświetl loader i toast
   toggleLoader(true);
   fetch("http://localhost:3000/customers")
-    .then((response) => response.json())
+    .then((response) => {
+      return response.json();
+    })
     .then((customers) => {
       listCustomers(customers);
       toggleLoader(false);
-      toast("wyswietlono uzytkownikow");
+      toast("Poprawnie pobrano listę użytkowników");
     });
 };
 
 const addCustomer = (name, surname) => {
-  toggleLoader(true);
+  console.log("dodaje użytkownia", { name, surname });
   // TODO: dodaj użytkownika, wyświetl loader i toast
+  toggleLoader(true);
   fetch("http://localhost:3000/customers", {
     method: "POST",
     headers: {
-      "Content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ name, surname }),
-  })
-    .then((response) => response.json())
-    .then((customers) => {
+  }).then((response) => {
+    if (response.ok) {
+      // pobieramy listę customers jeszcze raz z nowym użytkownikiem
+      fetchCustomers();
       toggleLoader(false);
-      listCustomers(customers);
-      toast(`dodano użytkownika ${name} ${surname}`);
-    });
+      toast(`Poprawnie dodano użytkownika ${name} ${surname}`);
+    }
+  });
 };
 
-const updateCustomer = (id, name = "test", surname = "test2") => {
-  // TODO: zaaktualizuj użytkownika, wyświetl loader i toast
+// TODO: zaaktualizuj użytkownika, wyświetl loader i toast
+// name = 'Adam', surname = 'Kowalski'  oznacza że jeśli nie podamy name i surname to
+// Adam Kowalski będzie domyślnymi parametrami
+const updateCustomer = (id, name = "Adam", surname = "Kowalski") => {
   toggleLoader(true);
   fetch(`http://localhost:3000/customers/${id}`, {
-    method: "PATCH",
+    method: "PUT",
     headers: {
-      "Content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ name, surname }),
-  })
-    .then((response) => response.json())
-    .then((customers) => {
+  }).then((response) => {
+    if (response.ok) {
+      // pobieramy listę customers jeszcze raz z zaaktualizowanym użytkownikiem
+      fetchCustomers();
       toggleLoader(false);
-      listCustomers(customers);
-      toast(`zaktualizowano użytkownika ${name} ${surname}`);
-    });
+      toast(`Poprawnie zaaktualizowano użytkownika ${name} ${surname}`);
+    }
+  });
 };
-//setTimeout(() => {
-// updateCustomer(2, "Dsda", "Dudziński");
-//}, 10000);
 
 const removeCustomer = (id) => {
-  toggleLoader(true);
   // TODO: skasuj użytkownika, wyświetl loader i toast
-  fetch(`http://localhost:3000/customers/${id}`, {
+  toggleLoader(true);
+  fetch("http://localhost:3000/customers/" + id, {
     method: "DELETE",
-  })
-    .then((response) => response.json())
-    .then((customers) => {
+  }).then((response) => {
+    if (response.ok) {
+      fetchCustomers();
       toggleLoader(false);
-      listCustomers(customers);
-      toast(`zaktualizowano użytkownika o id ${id}`);
-    });
+      toast(`Poprawnie skasowano użytkownika ${id}`);
+    }
+  });
 };
 
 const customerForm = document.querySelector("#customerForm");
 
 customerForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const name = event.target["name"].value; // złap wartość inputa name
-  const surname = event.target["surname"].value; // złap wartość inputa surname
+  const name = event.target["name"].value;
+  const surname = event.target["surname"].value;
   addCustomer(name, surname);
+
   event.target["name"].value = "";
   event.target["surname"].value = "";
-  // zresetuj wartości w formularzu
 });
 
 // ściągnij dane po załadowaniu strony

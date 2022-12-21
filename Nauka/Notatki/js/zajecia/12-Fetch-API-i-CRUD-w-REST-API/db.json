@@ -1,0 +1,36 @@
+{
+  "todos": [
+    {
+      "action": "bardzo lubie placki1",
+      "id": 1
+    },
+    {
+      "action": "bardzo lubie placki",
+      "id": 2
+    },
+    {
+      "action": "lubie placki",
+      "id": 3
+    },
+    {
+      "action": "lubie placki",
+      "id": 4
+    },
+    {
+      "action": "lubie placki",
+      "id": 6
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "test",
+      "surname": "test2"
+    },
+    {
+      "id": 2,
+      "name": "abc",
+      "surname": "abcd"
+    }
+  ]
+}

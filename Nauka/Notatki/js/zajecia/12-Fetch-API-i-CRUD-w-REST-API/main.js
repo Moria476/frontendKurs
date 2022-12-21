@@ -59,17 +59,56 @@ const fetchCustomers = () => {
 };
 
 const addCustomer = (name, surname) => {
-  console.log("dodaje użytkownia", { name, surname });
+  toggleLoader(true);
   // TODO: dodaj użytkownika, wyświetl loader i toast
+  fetch("http://localhost:3000/customers", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({ name, surname }),
+  })
+    .then((response) => response.json())
+    .then((customers) => {
+      toggleLoader(false);
+      listCustomers(customers);
+      toast(`dodano użytkownika ${name} ${surname}`);
+    });
 };
 
 const updateCustomer = (id, name = "test", surname = "test2") => {
-  console.log("aktualizuje użytkownika użytkownia", { id, name, surname });
   // TODO: zaaktualizuj użytkownika, wyświetl loader i toast
+  toggleLoader(true);
+  fetch(`http://localhost:3000/customers/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({ name, surname }),
+  })
+    .then((response) => response.json())
+    .then((customers) => {
+      toggleLoader(false);
+      listCustomers(customers);
+      toast(`zaktualizowano użytkownika ${name} ${surname}`);
+    });
 };
+//setTimeout(() => {
+// updateCustomer(2, "Dsda", "Dudziński");
+//}, 10000);
 
 const removeCustomer = (id) => {
+  toggleLoader(true);
   // TODO: skasuj użytkownika, wyświetl loader i toast
+  fetch(`http://localhost:3000/customers/${id}`, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then((customers) => {
+      toggleLoader(false);
+      listCustomers(customers);
+      toast(`zaktualizowano użytkownika o id ${id}`);
+    });
 };
 
 const customerForm = document.querySelector("#customerForm");

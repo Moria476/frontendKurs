@@ -78,52 +78,60 @@ presets: [
     document.getElementById('app')
     )
 13. npx webpack --config webpack.config.js
-14. npm i webpack-dev-server --save-dev
-15. przekleic w webpack config.js
-    const path = require('path')
+
+14. przekleic w webpack config.js
+    const path = require("path");
 
 module.exports = {
-entry: path.resolve(**dirname, 'src', 'index.js'),
+mode: "development",
+entry: path.resolve(**dirname, "src", "index.js"),
 output: {
-path: path.resolve(**dirname, 'dist'),
-filename: 'bundle.js'
+path: path.resolve(**dirname, "dist"),
+filename: "bundle.js",
 },
 devServer: {
-contentBase: path.resolve(**dirname, 'dist'),
-open: true,
-clientLogLevel: 'silent',
-port: 9000
+static: {
+directory: path.join(**dirname, "dist"),
+},
+compress: true,
+port: 9000,
+client: {
+logging: "none",
+},
 },
 module: {
 rules: [
 {
 test: /\.(jsx|js)$/,
-include: path.resolve(**dirname, 'src'),
+include: path.resolve(**dirname, "src"),
 exclude: /node_modules/,
-use: [{
-loader: 'babel-loader',
+use: [
+{
+loader: "babel-loader",
 options: {
 presets: [
-['@babel/preset-env', {
-"targets": "defaults"
-}],
-'@babel/preset-react'
-]
-}
-}]
-}
-]
-}
-}
-
-16. w package json dokleić po test pamietajac o przecinku
-    "develop": "webpack-dev-server"
-17. do index.js
-    import React from 'react'
-    import ReactDOM from 'react-dom'
+[
+"@babel/preset-env",
+{
+targets: "defaults",
+},
+],
+"@babel/preset-react",
+],
+},
+},
+],
+},
+],
+},
+}; 15. npm i webpack-dev-server --save-dev 16. w package json dokleić po test pamietajac o przecinku
+"develop": "webpack-dev-server" 17. do index.js
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 ReactDOM.render(
 React.createElement('div', null, `Complete Guide to Webpack Configuration for React`),
 document.getElementById('app')
 )
+
 18.npm run develop

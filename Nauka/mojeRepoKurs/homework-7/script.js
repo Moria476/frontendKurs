@@ -8,23 +8,26 @@ async function fetchData(name) {
   showProfile(user, repos);
 }
 const profileLinks = document.querySelector(".main__div__right__links");
+const profileImage = document.querySelector("#profileImage");
+const profileName = document.querySelector("#profileName");
+const profileDescription = document.querySelector("#description");
+const profileFollowers = document.querySelector("#numberFollowers");
+const profileFollowing = document.querySelector("#numberFollowing");
+const profileRepos = document.querySelector("#numberRepos");
 
 const showProfile = async (user, repos) => {
-  const profileImage = document.querySelector("#profileImage");
-  const profileName = document.querySelector("#profileName");
-  const profileDescription = document.querySelector("#description");
-  const profileFollowers = document.querySelector("#numberFollowers");
-  const profileFollowing = document.querySelector("#numberFollowing");
-  const profileRepos = document.querySelector("#numberRepos");
-  for (i = 0; i < repos.length && i < 10; i++) {
-    const link = document.createElement("a");
-    link.href = `${repos[i].html_url}`;
-    link.innerHTML = repos[i].name;
+  repos.slice(-10).forEach( repo => {
+      const link = document.createElement("a");
+    link.href = repo.html_url;
+    link.innerHTML = repo.name;
     profileLinks.append(link);
-  }
+  })
   profileImage.src = user.avatar_url;
   profileName.innerHTML = user.name;
-  if (!user.bio === null) {
+  if (user.bio === null) {
+    profileDescription.innerHTML="Description not provided"
+  }
+  else{
     profileDescription.innerHTML = user.bio;
   }
   profileFollowers.innerHTML = user.followers;

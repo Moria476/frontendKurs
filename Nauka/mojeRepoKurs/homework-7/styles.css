@@ -140,7 +140,16 @@ a {
   row-gap: 10px;
   column-gap: 5px;
 }
-
+input:-internal-autofill-selected {
+  background-color: var(--color-neutral3);
+  color: var(--color-white);
+  border-radius: 5px;
+  padding: 10px;
+  height: 50px;
+  font-size: 0.7rem;
+  border-style: none;
+  width: 200px;
+}
 @media screen and (max-width: 425px) {
   .wrapper {
     display: grid;

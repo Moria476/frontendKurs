@@ -16,45 +16,38 @@
     <div class="wrapper">
       <div class="top__div"></div>
       <div class="main__container">
-        <form role="search">
+        <form role="search" id="form">
           <input
-            class="form-control"
             type="search"
             placeholder="Search a GitHub User"
             aria-label="Search"
-            id="search" />
+            id="search"
+            autocomplete="off" />
         </form>
         <div class="main__div">
           <div class="main__div__left">
-            <img id="profileImage" src="" />
+            <img
+              id="profileImage"
+              src="./assets/blank-profile-picture-973460__340.webp" />
           </div>
           <div class="main__div__right">
-            <h1 id="profileName"></h1>
-            <p id="description"></p>
+            <h1 id="profileName">UserName</h1>
+            <p id="description">Description not provided</p>
             <div class="main__div__right__social">
               <div class="main__div__right__social__followers">
-                <span id="numberFollowers"></span>
+                <span id="numberFollowers">0</span>
                 <span id="textSocial">Followers</span>
               </div>
               <div class="main__div__right__social__following">
-                <span id="numberFollowing"></span>
+                <span id="numberFollowing">0</span>
                 <span id="textSocial">Following</span>
               </div>
               <div class="main__div__right__social__repos">
-                <span id="numberRepos"></span>
+                <span id="numberRepos">0</span>
                 <span id="textSocial">Repos</span>
               </div>
             </div>
-            <div class="main__div__right__links">
-              <!-- <a href="url">Link text or object</a>
-              <a href="url">adsd</a>
-              <a href="url">hghf</a>
-              <a href="url">kjjkkkkkkkkkkkt</a>
-              <a href="url">kjjkkkkkkkkkkkt</a>
-              <a href="url">kjjkkkkkkkkkkkt</a>
-              <a href="url">kjjkkkkkkkkkkkt</a>
-              <a href="url">kjjkkkkkkkkkkkt</a> -->
-            </div>
+            <div class="main__div__right__links"></div>
           </div>
         </div>
       </div>

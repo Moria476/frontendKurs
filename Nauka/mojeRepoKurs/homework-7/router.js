@@ -1,7 +1,4 @@
-import Characters from "./pages/characters.js";
-import SingleCharacter from "./pages/SingleCharacter.js";
-import Locations from "./pages/locations.js";
-import SingleLocation from "./pages/singleLocation.js";
+import SearchGithubUser from "./pages/searchGithubUser.js";
 
 const router = new Navigo(null, true, "#");
 
@@ -12,10 +9,7 @@ export default class RouterHandler {
 
   createRoutes() {
     const routes = [
-      { path: "/", page: Characters },
-      { path: "/character", page: SingleCharacter },
-      { path: "/locations", page: Locations },
-      { path: "/location", page: SingleLocation },
+      { path: "/", page: SearchGithubUser },
     ];
 
     routes.forEach(({ path, page }) => {

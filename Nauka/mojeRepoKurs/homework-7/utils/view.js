@@ -1,1 +1,1 @@
-export default document.querySelector("#root");
+export default document.querySelector(".main__container");

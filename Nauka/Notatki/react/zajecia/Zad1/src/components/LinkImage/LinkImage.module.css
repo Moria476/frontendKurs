@@ -1,0 +1,9 @@
+.link {
+  padding: 10px;
+  color: pink;
+}
+
+.alternative {
+  composes: link;
+  color: red;
+}

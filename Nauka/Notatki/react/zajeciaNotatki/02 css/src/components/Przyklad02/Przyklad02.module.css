@@ -1,0 +1,7 @@
+.button__red {
+	background-color: red;
+}
+.button__red__bigger {
+	composes: button__red;
+	width: 500px;
+}

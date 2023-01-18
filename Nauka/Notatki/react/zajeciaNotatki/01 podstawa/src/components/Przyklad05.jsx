@@ -46,6 +46,8 @@ export const Przyklad5a = () => {
 // kazdy element bezposrednio podlegajacy tablicy
 //musi miec id , po stworzeniu tablicy czyli po mapowaniu by nie
 //renderowalo calej tablicy na nowo. Czyli w tym przypadku <p> oraz <div>
+//
+// Poniżej są to dwa ternary operatory
 export const Przyklad5b = () => {
 	const mapowanie = array.map((element) => {
 		return !element.items ? null : element.items.length === 0 ? (

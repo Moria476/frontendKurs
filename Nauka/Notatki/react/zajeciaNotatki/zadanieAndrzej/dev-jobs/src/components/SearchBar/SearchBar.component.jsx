@@ -9,6 +9,7 @@ const Search = () => {
 				<Input
 					placeholder="Filter by title, companies, expertise..."
 					imgUrl="../../../public/assets/desktop/icon-search.svg"
+					for="filterByInfos"
 				/>
 				<Button>Search</Button>
 			</SearchBar>

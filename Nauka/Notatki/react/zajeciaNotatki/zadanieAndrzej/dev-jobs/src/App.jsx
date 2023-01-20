@@ -1,7 +1,7 @@
 import Button from "./components/ui/Button/Button.styled";
 import { Input } from "./components/ui/Input/Input.component";
 import { SingleCard } from "./components/SingleCard/SingleCard.component";
-import { BackSVGContainer } from "./components/Background/Background.styled";
+import { BackSVGContainer } from "./components/ui/Background/Background.styled";
 import { JobsGrid } from "./components/JobsGrid/JobsGrid.styled";
 import ToggleMode from "./components/ui/Toggle/Toggle.component";
 import Search from "./components/SearchBar/SearchBar.component";

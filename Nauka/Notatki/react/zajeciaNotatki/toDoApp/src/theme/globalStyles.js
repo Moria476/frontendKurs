@@ -56,7 +56,6 @@ body {
   min-height: 100vh;
   background-color: purple;
   overflow: auto;
-  transition: 0.2s linear;
 }
 
 :root {
@@ -146,7 +145,9 @@ input {
   font-family: inherit;
   background-color: transparent;
 }
-
+input[type="checkbox"]{
+  appearance:none
+}
 button {
   cursor: pointer;
 }
@@ -158,7 +159,6 @@ li {
 a {
   text-decoration: none;
 }
-
 .showOnlyOnMobile {
   display: none;
 }

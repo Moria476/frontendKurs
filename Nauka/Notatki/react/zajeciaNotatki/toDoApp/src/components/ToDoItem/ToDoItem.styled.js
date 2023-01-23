@@ -1,26 +1,43 @@
 import styled from "styled-components";
 
 export const ToDoItemContainer = styled.div`
-	padding: 1rem 3.2rem 3.2rem;
-	position: relative;
-	opacity: 1;
-	::before {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: calc(100% - 3.5rem);
-		background-color: var(--background-color-elements);
-		border-radius: var(--border-radius-s);
-		transition: 0.2s linear;
-	}
-	> * {
-		position: relative;
-	}
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 5px;
+  align-items: center;
 `;
-export const MarkToDo = styled.button``;
+export const MarkToDo = styled.input`
+  margin: 0px 10px;
+  width: 15px;
+  height: 15px;
 
-export const RemoveToDo = styled.button``;
+  background-color: black;
 
-export const ToDoItemText = styled.p``;
+  :checked {
+    background-color: green;
+  }
+  border: 2px solid;
+`;
+
+export const RemoveToDo = styled.button`
+  margin: 0px 10px;
+  width: 15px;
+  height: 15px;
+  img {
+    width: 15px;
+    height: 15px;
+  }
+`;
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+`;
+export const ToDoItemText = styled.input`
+  font-size: 2rem;
+`;

@@ -1,17 +1,22 @@
 import {
-	ToDoItemContainer,
-	ToDoItemText,
-	MarkToDo,
-	RemoveToDo,
+  ToDoItemContainer,
+  ToDoItemText,
+  MarkToDo,
+  RemoveToDo,
+  ButtonWrapper,
 } from "./ToDoItem.styled";
 
-const ToDoItem = () => {
-	return (
-		<ToDoItemContainer>
-			<ToDoItemText>dasdsad</ToDoItemText>
-			<RemoveToDo>X</RemoveToDo>
-			<MarkToDo type="checkbox">X</MarkToDo>
-		</ToDoItemContainer>
-	);
+const ToDoItem = ({ text }) => {
+  return (
+    <ToDoItemContainer>
+      <ToDoItemText value={text} />
+      <ButtonWrapper>
+        <RemoveToDo>
+          <img src="../../../public/jean_victor_balin_cross.png" />
+        </RemoveToDo>
+        <MarkToDo type="checkbox" />
+      </ButtonWrapper>
+    </ToDoItemContainer>
+  );
 };
 export default ToDoItem;

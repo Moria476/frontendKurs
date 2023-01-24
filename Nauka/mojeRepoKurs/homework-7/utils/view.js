@@ -1,1 +1,1 @@
-export default document.querySelector(".main__container");
+export default document.querySelector(".main__div");

@@ -1,0 +1,190 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-violet: #5964e0;
+  --color-light-violet: #939bf4;
+  --color-very-dark-blue: #19202d;
+  --color-midnight: #121721;
+  --color-white: #fff;
+  --color-light-grey: #f4f6f8;
+  --color-grey: #9daec2;
+  --color-dark-grey: #6e8098;
+  --font-size-h1: 2.8rem;
+  --line-height-h1: 3.4rem;
+  --font-size-h2: 2.4rem;
+  --line-height-h2: 2.9rem;
+  --font-size-h3: 2rem;
+  --line-height-h3: 2.4rem;
+  --font-size-h4: 1.4rem;
+  --line-height-h4: 1.8rem;
+  --font-size-body: 1.6rem;
+  --line-height-body: 2.6rem;
+  --border-radius-xxs: 0.3rem;
+  --border-radius-xs: 0.5rem;
+  --border-radius-s: 0.6rem;
+  --border-radius-m: 1.2rem;
+  --border-radius-l: 1.5rem;
+  --border-radius-xl: 10rem;
+  --padding-layout: 0 10%;
+  --padding-search-bar-items: 2rem 3.2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-dark-grey);
+}
+
+:root {
+  min-height: 100vh;
+  background-color: purple;
+  overflow: auto;
+}
+
+:root {
+  --background-color-app: var(--color-light-grey);
+  --background-color-elements: var(--color-white);
+  --color-text: var(--color-very-dark-blue);
+  --color-checkbox: #e7e8e9;
+  --background-color-btn-2: #eeeffc;
+  --background-color-btn-2-hover: #c5c9f4;
+  --color-btn-2: var(--color-violet);
+}
+
+:root .dark-theme {
+  --background-color-app: var(--color-midnight);
+  --background-color-elements: var(--color-very-dark-blue);
+  --color-text: var(--color-white);
+  --color-checkbox: #313743;
+  --background-color-btn-2: #303642;
+  --background-color-btn-2-hover: #696e76;
+  --color-btn-2: var(--color-white);
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12.2rem;
+  padding: var(--padding-layout);
+}
+
+header a {
+  line-height: 12.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10rem;
+  padding: var(--padding-layout);
+}
+
+footer {
+  width: 100%;
+  background-color: var(--background-color-elements);
+  transition: 0.2s linear;
+  padding: var(--padding-layout);
+}
+
+h1,
+h2,
+h3 {
+  color: white;
+  transition: 0.2s linear;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  color: var(--color-violet);
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  background-color: transparent;
+}
+input[type="checkbox"]{
+  appearance:none
+}
+button {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+.showOnlyOnMobile {
+  display: none;
+}
+
+@media (max-width: 75em) {
+  :root {
+    --padding-layout: 0 5%;
+    --padding-search-bar-items: 2rem;
+  }
+}
+
+@media (max-width: 48.12em) {
+  :root {
+    --padding-search-bar-items: 2.2rem;
+    --border-radius-xl: 0;
+  }
+
+  .hideOnMobile {
+    display: none;
+  }
+
+  .showOnlyOnMobile {
+    display: block;
+  }
+}
+
+`;
+
+export default GlobalStyle;

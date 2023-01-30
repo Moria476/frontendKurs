@@ -1,65 +1,35 @@
 import UserProfileComponent from "../components/githubUser/UserProfile.js";
-import baseUrl from "../utils/baseUrl.js";
+import { getRepos } from "../utils/getRepos.js";
+import { getUser } from "../utils/getUser.js";
 import view from "../utils/view.js";
 
-
-const profileLinks = document.querySelector(".main__div__right__links");
-
-export default async function SearchGithubUser() {
-  let user = null;
-  let repos = null;
-    user = await getUser();
-    repos = await getRepos();
- 
+export default async function startingProfile() {
+  let user = await getUser();
+  let repos = await getRepos();
   view.innerHTML = `
       ${UserProfileComponent(user, repos)}
     `;
 }
 
-async function getUser(name ="Moria476") {
-    const response = await fetch(`${baseUrl}/${name}`);
-    const user = await response.json();
-   return user;
+const searchInput = document.querySelector("#search");
+searchInput.addEventListener("change", async (event) => {
+  event.preventDefault();
+  let user = await getUser(event.target.value);
+  let repos = await getRepos(event.target.value);
+  view.innerHTML = `
+      ${UserProfileComponent(user, repos)}
+    `;
+});
+
+const form = document.querySelector("#form");
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (event.key === "Enter") {
+    let user = await getUser(event.target.value);
+    let repos = await getRepos(event.target.value);
+    view.innerHTML = `
+       ${UserProfileComponent(user, repos)}
+     `;
   }
-  async function getRepos(name="Moria476") {
-    const responseRepos = await fetch(
-      `${baseUrl}/${name}/repos`
-    );
-    const repos = await responseRepos.json();
-    return repos;
-  }
-
-
-  function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
-  }
-
-//  const searchInput = document.querySelector("#search");
-//  searchInput.addEventListener("change", (event) => {
-//     event.preventDefault();
-//     removeAllChildNodes(profileLinks);
-//     getUser(event.target.value);
-//     getRepos(event.target.value);
-//   });
-
-//   const form = document.querySelector("#form");
-//   form.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     if (event.key === "Enter") {
-//       removeAllChildNodes(profileLinks);
-//       getUser(event.target.value);
-//     getRepos(event.target.value);
-//     }
-//     searchInput.blur();
-//   });
-
-
-
-
-
- 
-  
-  
-  
+  searchInput.blur();
+});

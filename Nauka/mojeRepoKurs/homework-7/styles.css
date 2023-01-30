@@ -22,6 +22,11 @@ body {
   height: 100%;
   width: 100%;
 }
+#form {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
 input {
   background-color: var(--color-neutral3);
   color: var(--color-white);
@@ -96,7 +101,6 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
 }
 .main__div {
   display: flex;

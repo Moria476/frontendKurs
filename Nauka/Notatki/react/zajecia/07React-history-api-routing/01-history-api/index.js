@@ -1,0 +1,17 @@
+function highlightCurrentMenu() {
+  const path = window.location.pathname;
+  console.log(path);
+  document
+    .querySelector("#menu-home")
+    .classList.toggle("menu-item__active", path === "/");
+  document
+    .querySelector("#menu-books")
+    .classList.toggle("menu-item__active", path === "/books");
+  document
+    .querySelector("#menu-users")
+    .classList.toggle("menu-item__active", path === "/users");
+  document
+    .querySelector("#menu-invitations")
+    .classList.toggle("menu-item__active", path === "/users/invitations");
+}
+highlightCurrentMenu();

@@ -1,0 +1,21 @@
+.root {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  cursor: pointer;
+}
+.root:hover{
+  background: #f8eabd;
+}
+.root p, .root h4{
+  margin: 4px 0;
+}
+
+.avatar {
+  margin-top: auto;
+  max-width: 150px;
+  object-fit: contain;
+  align-self: center;
+}

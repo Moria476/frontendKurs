@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.field {
+  padding: 10px;
+  flex: 1;
+}

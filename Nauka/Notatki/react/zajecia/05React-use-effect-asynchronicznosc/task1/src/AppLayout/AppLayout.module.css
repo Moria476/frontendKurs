@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  justify-content: stretch;
+}
+
+.usersColumn {
+  width: 500px;
+  background: aliceblue;
+  padding: 10px;
+  /* this column is scrollable */
+  overflow: auto;
+}
+
+.cartColumn {
+  overflow: auto;
+  flex: 1;
+  padding: 10px;
+}
+.productColumn {
+  width: 500px;
+  background: aliceblue;
+  overflow: auto;
+  padding: 10px;
+}

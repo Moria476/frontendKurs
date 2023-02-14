@@ -6,10 +6,11 @@
   background: #ffffff;
   cursor: pointer;
 }
-.root:hover{
+.root:hover {
   background: #f8eabd;
 }
-.root p, .root h4{
+.root p,
+.root h4 {
   margin: 4px 0;
 }
 
@@ -18,4 +19,7 @@
   max-width: 150px;
   object-fit: contain;
   align-self: center;
+}
+.active {
+  background: #f8eabd;
 }

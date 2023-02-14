@@ -8,25 +8,45 @@ import { SearchForm } from "./components/SearchForm/SearchForm";
 import { UserItem } from "./components/UserItem/UserItem";
 import { delay } from "./delay";
 import { Spinner } from "./Spinner/Spinner";
+import {
+  Link,
+  Route,
+  Routes,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
+import { CartPage } from "./pages/CartPage";
 
 const getAllUsers = () => fetch("https://dummyjson.com/users").then(delay(800));
 
 const findUsers = (query) =>
   fetch(`https://dummyjson.com/users/search?q=${query}`).then(delay(800));
 
-const getUserCarts = (userId) =>
-  fetch(`https://dummyjson.com/carts/user/${userId}`).then(delay(400));
+// const getUserCarts = (userId) =>
+//   fetch(`https://dummyjson.com/carts/user/${userId}`).then(delay(400));
+
+//zabrano do CartPage
 
 const getProductPreview = (productId) =>
   fetch(`https://dummyjson.com/products/${productId}`).then(delay(400));
 
 const App = () => {
-  const [search, setSearch] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const search = searchParams.get("search") ?? "";
+
+  const setSearch = (newValue) => {
+    setSearchParams({ newValue });
+  };
+  console.log("search params", search);
+
+  // const [search, setSearch] = useState("");
   const [users, setUsers] = useState(null);
-  const [products, setProducts] = useState(null);
+  // const [products, setProducts] = useState(null);
+  //zabrano do CartPage
   const [productPreview, setProductPreview] = useState(null);
 
-  const [selectedUser, setSelectedUser] = useState(null);
+  //const [selectedUser, setSelectedUser] = useState(null);
+  //usuniete bo wybieranie usera ma odbywac sie przez Link
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
@@ -37,15 +57,15 @@ const App = () => {
       .then(setUsers);
   }, [search]);
 
-  useEffect(() => {
-    setProducts(null);
-    selectedUser !== null &&
-      getUserCarts(selectedUser)
-        .then((x) => x.json())
-        .then((x) => x.carts[0]?.products ?? [])
-        .then(setProducts);
-  }, [selectedUser]);
-
+  // useEffect(() => {
+  //   setProducts(null);
+  //   selectedUser !== null &&
+  //     getUserCarts(selectedUser)
+  //       .then((x) => x.json())
+  //       .then((x) => x.carts[0]?.products ?? [])
+  //       .then(setProducts);
+  // }, [selectedUser]);
+  //przeniesiono do CartPage
   useEffect(() => {
     setProductPreview(null);
     selectedProduct !== null &&
@@ -53,7 +73,49 @@ const App = () => {
         .then((x) => x.json())
         .then(setProductPreview);
   }, [selectedProduct]);
+  //   const ProductView = () => {
+  //     const params = useParams();
 
+  //     console.log(params);
+
+  //     return (
+  //       <div>
+  //         Produkt: {params.productId}, user: {params.userId}
+  //       </div>
+  //     );
+  //   };
+
+  //   return (
+  //     <div>
+  //       <nav style={{ display: "flex", flexDirection: "column" }}>
+  //         <Link to="/users">Users</Link>
+  //         <Link to="/users/4">Specific user</Link>
+  //         <Link to="/users/4/products/6">Product for user 6</Link>
+  //         <Link to="/users/7/products/222">Product for user 6</Link>
+  //         <Link to="/users/8/products/886">Product for user 6</Link>
+  //         <Link to="/users/44/products/6425">Product for user 6</Link>
+  //         <Link to="/users/4/products/6/edit">Edit product</Link>
+  //       </nav>
+  //       <div>
+  //         <Routes>
+  //           <Route path="/users" element={<div>Lista userów</div>} />
+  //           <Route
+  //             path="/users/:userId"
+  //             element={<div>Koszyk usera od id 4</div>}
+  //           />
+  //           <Route
+  //             path="/users/:userId/products/:productId"
+  //             element={<ProductView />}
+  //           />
+  //           <Route
+  //             path="/users/:userId/products/:productId/edit"
+  //             element={<div>Editing product</div>}
+  //           />
+  //         </Routes>
+  //       </div>
+  //     </div>
+  //   );
+  // };
   return (
     <AppLayout
       usersColumn={
@@ -67,7 +129,7 @@ const App = () => {
                 <UserItem
                   key={p.id}
                   {...p}
-                  onClick={() => setSelectedUser(p.id)}
+                  //onClick={() => setSelectedUser(p.id)}
                 />
               ))}
             </GridContainer>
@@ -76,7 +138,12 @@ const App = () => {
       }
       cartColumn={
         <>
-          {selectedUser === null ? null : products === null ? (
+          <Routes>
+            <Route path="/" element={<div>wybierz użytkownika</div>} />
+            <Route path="/users/:userId/*" element={<CartPage />} />
+          </Routes>
+          {/* GWiazdka na koncu da nam wyswietlenie podstron */}
+          {/* {selectedUser === null ? null : products === null ? (
             <Spinner />
           ) : (
             <GridContainer>
@@ -88,12 +155,12 @@ const App = () => {
                 />
               ))}
             </GridContainer>
-          )}
+          )}  PRZENIESIONO do CARTPAGE*/}
         </>
       }
       productColumn={
         <>
-          {selectedProduct !== null && products !== null && (
+          {/* {selectedProduct !== null && products !== null && (
             <CartItemEdit
               cartItem={products.find((p) => p.id === selectedProduct)}
               onChange={(newData) => {
@@ -108,7 +175,7 @@ const App = () => {
             <Spinner />
           ) : (
             <ProductPreview {...productPreview} />
-          )}
+          )} */}
         </>
       }
     />

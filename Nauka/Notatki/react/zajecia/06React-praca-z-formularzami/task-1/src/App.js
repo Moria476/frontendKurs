@@ -6,6 +6,8 @@ import { ProductPreview } from "./components/ProductPreview/ProductPreview";
 import { UserItem } from "./components/UserItem/UserItem";
 import { delay } from "./delay";
 import { Spinner } from "./Spinner/Spinner";
+import { SearchForm } from "./components/SearchForm/SearchForm";
+import { CartItemEdit } from "./components/CartItemEdit/CartItemEdit";
 
 const getAllUsers = () => fetch("https://dummyjson.com/users").then(delay(800));
 
@@ -25,14 +27,14 @@ const App = () => {
 
   const [selectedUser, setSelectedUser] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
-
+  const [userQuery, setUserQuery] = useState("");
   useEffect(() => {
     setUsers(null);
-    getAllUsers()
+    findUsers(userQuery) 
       .then((x) => x.json())
       .then((x) => x.users)
       .then(setUsers);
-  }, []);
+  }, [userQuery]); 
 
   useEffect(() => {
     setProducts(null);
@@ -59,6 +61,7 @@ const App = () => {
     <AppLayout
       usersColumn={
         <>
+          <SearchForm onSearch={(newQuery) => setUserQuery(newQuery)} />
           {users === null ? (
             <Spinner />
           ) : (
@@ -93,6 +96,7 @@ const App = () => {
       }
       productColumn={
         <>
+          <CartItemEdit cartItem={{}} /> //dlaczego pusty
           {selectedProduct === null ? null : productPreview === null ? (
             <Spinner />
           ) : (
